@@ -328,3 +328,5 @@ TSWLatexianTemp*
 # Build directory
 build/
 
+# Private variables
+config.tex

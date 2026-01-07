@@ -1,0 +1,23 @@
+@startuml
+title Project Scope: Inclusions and Exclusions
+
+package "IN SCOPE" {
+  [Patrol Management] as PM
+  [Incident and Crime Reporting] as ICR
+  [Case Investigation] as CI
+  [Evidence Management] as EM
+  [Personnel Management] as PSM
+}
+
+package "OUT OF SCOPE" {
+  [National Security Ops] as NSO
+  [Facial Recognition Systems] as FRS
+  [Predictive Policing Algorithms] as PPA
+  [Inter-Organizational Ops] as IOO
+}
+
+PM -[hidden] ICR
+ICR -[hidden] CI
+CI -[hidden] EM
+EM -[hidden] PSM
+@enduml

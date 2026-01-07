@@ -1,0 +1,26 @@
+@startuml
+title Overall System Use Cases
+
+left to right direction
+actor "Officer" as O
+actor "Dispatcher" as D
+actor "Detective" as DE
+actor "Civilian" as C
+actor "Administrator" as A
+
+rectangle "Police Organization System" {
+  (Report Incident) as UC1
+  (Dispatch Unit) as UC2
+  (Arrest Suspect) as UC3
+  (Investigate Case) as UC4
+  (Manage Personnel) as UC5
+  (Generate Report) as UC6
+}
+
+C --> UC1
+D --> UC2
+O --> UC3
+DE --> UC4
+A --> UC5
+O --> UC6
+@enduml

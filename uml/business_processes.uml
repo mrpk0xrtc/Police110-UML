@@ -1,0 +1,23 @@
+@startuml
+title High-Level Business Processes
+
+rectangle "Police Operations" {
+  (Patrol) as P
+  (Dispatch) as D
+  (Investigate) as I
+  (Report) as R
+}
+
+rectangle "Support Functions" {
+  (Personnel) as PF
+  (Equipment) as EQ
+  (Training) as TR
+}
+
+P --> D : calls for
+D --> I : assigns
+I --> R : generates
+PF --> P : staffs
+EQ --> P : equips
+TR --> PF : trains
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+title Methodology: Iterative Design
+
+start
+:Requirements Gathering;
+:Use Case Modeling;
+:Domain Modeling;
+repeat
+  :Design Diagrams;
+  :Review & Refine;
+repeat while (Approved?) is (No)
+->Yes;
+:Final Documentation;
+stop
+@enduml

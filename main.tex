@@ -3,6 +3,7 @@
 \usepackage{hyperref}
 \usepackage[toc]{multitoc}
 \usepackage{tikz}
+\usepackage{wrapfig}
 \usepackage[inkscapeformat=png,inkscapepath=build]{svg}
 \usepackage{xepersian}
 \usepackage{enumerate}
@@ -62,7 +63,7 @@
     \item تقویت بررسی عملکرد مأموران
 \end{itemize}
 
-\section{دامنه}
+\subsection{دامنه}
 
 \subsubsection{درون گستره}
 
@@ -106,6 +107,44 @@
     \item پزشکی قانونی - کابران اصلی خارجی
     \item قضات - مصرف کنندگان اطلاعت
 \end{enumerate}
+
+\large{\textbf{جدول نیازمندی ذی نفعان}}
+\normalsize
+
+\begin{center}
+\begin{tabular}{| c | c | c |}
+    \hline
+    ذی‌نفع & نیازمندی & اولویت \\ [0.6ex]
+    \hline\hline
+    مأموران پلیس & گزارش آسان حوادث, دسترسی سریع به پرونده ها & بالا \\ [0.6ex]
+    \hline
+    کارآگاهان & ارتباط دادن پرونده ها, پیگیری اسناد و مدارک & بالا \\ [0.6ex]
+    \hline
+    عموم مردم & گزارش ناشناس, بررسی وضعیت پرونده & متوسط  \\ [0.6ex]
+    \hline
+    ناظر & مدیریت کاربران, پایش سیستم & بالا  \\ [0.6ex]
+    \hline
+\end{tabular}
+\end{center}
+
+\pagebreak
+
+\subsection{متودولوژی}
+
+\begin{wrapfigure}{l}{2in}
+  \begin{center}
+    \begin{tikzpicture}[remember picture]
+    \node[anchor=north west]
+        at (current page.north west) {
+        \includesvg[width=12in, height=4in]{images/methodology}
+    };
+    \end{tikzpicture}
+  \end{center}
+\end{wrapfigure}
+
+طراحی تکراری یک روش طراحی است که بر اساس یک فرآیند چرخه‌ای نمونه‌سازی، آزمایش، تجزیه و تحلیل و پالایش یک محصول یا فرآیند است. بر اساس نتایج آزمایش جدیدترین تکرار یک طرح، تغییرات و اصلاحاتی انجام می شود. این فرآیند در نهایت برای بهبود کیفیت و عملکرد یک طراحی در نظر گرفته شده است. در طراحی تکراری، تعامل با سیستم طراحی شده به عنوان شکلی از تحقیق برای اطلاع رسانی و تکامل یک پروژه استفاده می شود، زیرا نسخه های متوالی یا تکرار یک طرح اجرا می شود.
+
+\vspace{1cm}
 
 \pagebreak
 

@@ -330,3 +330,6 @@ build/
 
 # Private variables
 config.tex
+
+# UML Images
+images/

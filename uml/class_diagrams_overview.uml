@@ -1,0 +1,39 @@
+@startuml
+title Core Classes Overview
+
+class Person <<Entity>> {
+  +id: String
+  +name: String
+  +dateOfBirth: Date
+  +address: String
+  +contactInfo: String
+}
+
+class Incident <<Entity>> {
+  +incidentId: String
+  +type: IncidentType
+  +location: Location
+  +timeReported: DateTime
+  +status: Status
+}
+
+class Report <<Entity>> {
+  +reportId: String
+  +content: String
+  +author: Person
+  +dateCreated: Date
+  +signatures: List<String>
+}
+
+class Case <<Entity>> {
+  +caseId: String
+  +priority: Priority
+  +assignedDetective: Person
+  +dateOpened: Date
+  +dateClosed: Date
+}
+
+Person "1" -- "*" Incident : involvedIn
+Incident "1" -- "*" Report : documentedBy
+Case "1" -- "*" Incident : includes
+@enduml

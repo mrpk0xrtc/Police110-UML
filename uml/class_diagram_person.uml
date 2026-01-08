@@ -1,0 +1,50 @@
+@startuml
+class Person {
+  -- Attributes --
+  #id: String
+  #name: String
+  #dateOfBirth: Date
+  #address: String
+  #contactInfo: String
+
+  -- Methods --
+  +getId(): String
+  +getName(): String
+  +getAge(): int
+  +updateContactInfo(info: String): void
+  +validateIdentity(): boolean
+}
+
+class Officer {
+  -- Attributes --
+  -badgeNumber: String
+  -rank: Rank
+  -assignment: Assignment
+  -department: Department
+  -hireDate: Date
+
+  -- Methods --
+  +getBadgeNumber(): String
+  +getRank(): Rank
+  +assignToPatrol(area: Zone): void
+  +generateReport(): Report
+}
+
+class Suspect {
+  -- Attributes --
+  -criminalRecord: List<Record>
+  -arrestHistory: List<Arrest>
+  -knownAssociates: List<Person>
+  -status: SuspectStatus
+
+  -- Methods --
+  +getCriminalRecord(): List<Record>
+  +addArrest(arrest: Arrest): void
+  +isWanted(): boolean
+}
+
+Person <|-- Officer
+Person <|-- Suspect
+Person <|-- Witness
+Person <|-- Victim
+@enduml

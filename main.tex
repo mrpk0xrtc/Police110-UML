@@ -1,7 +1,6 @@
 \documentclass{article}
 
 \usepackage{hyperref}
-\usepackage[toc]{multitoc}
 \usepackage{tikz}
 \usepackage{wrapfig}
 \usepackage[inkscapeformat=png,inkscapepath=build]{svg}
@@ -9,9 +8,8 @@
 \usepackage{enumerate}
 \include{config}
 
-\settextfont{}
-\setlatintextfont{}
-\setlength{\columnseprule}{0.5pt}
+\settextfont{\mypersianfont}
+\setlatintextfont{\mylatinfont}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -28,20 +26,41 @@
 
 \include{title}
 \pagebreak
-
 \include{introduction}
 \pagebreak
-
 \include{business_processes}
 \pagebreak
-
-\include{use_cases_overall}
-\pagebreak
-
 \include{class_diagrams_overview}
 \pagebreak
-
 \include{class_diagram_person}
+\pagebreak
+\include{class_diagram_officer}
+\pagebreak
+\include{class_diagram_suspect}
+\pagebreak
+\include{class_diagram_incident}
+\pagebreak
+\include{class_diagram_report}
+\pagebreak
+\include{class_diagram_evidence}
+\pagebreak
+\include{class_diagram_case}
+\pagebreak
+\include{class_diagram_dispatch}
+\pagebreak
+\include{class_diagram_vehicle}
+\pagebreak
+\include{class_diagram_equipment}
+\pagebreak
+\include{class_diagram_relationships}
+\pagebreak
+\include{class_diagram_person_inheritance}
+\pagebreak
+\include{class_diagram_dispatch_system}
+\pagebreak
+\include{class_diagram_equipment_tracking}
+\pagebreak
+\include{use_cases_overall}
 \pagebreak
 
 \end{document}

@@ -1,0 +1,60 @@
+@startuml
+title Equipment Tracking Associations
+
+class Equipment {
+  +equipmentId: String
+  +type: EquipmentType
+  +serialNumber: String
+  +status: EquipmentStatus
+  +checkOut(): void
+  +checkIn(): void
+}
+
+class Weapon {
+  +type: WeaponType
+  +caliber: String
+  +registrationNumber: String
+  +lastService: Date
+  +inspect(): boolean
+}
+
+class Vehicle {
+  +vehicleId: String
+  +licensePlate: String
+  +type: VehicleType
+  +assignOfficer(): void
+  +scheduleMaintenance(): void
+}
+
+class Officer {
+  +badgeNumber: String
+  +rank: Rank
+  +checkOutEquipment(): void
+  +returnEquipment(): void
+}
+
+class Quartermaster {
+  +employeeId: String
+  +inventoryAllEquipment(): List<Equipment>
+  +issueEquipment(): Transaction
+  +retireEquipment(): void
+}
+
+class Station {
+  +stationId: String
+  +name: String
+  +location: Location
+  +storeEquipment(): void
+}
+
+Equipment <|-- Weapon
+Equipment <|-- Vehicle
+Equipment <|-- BodyCamera
+Equipment <|-- Radio
+Equipment <|-- Computer
+
+Officer "1" -- "*" Equipment : assignedTo
+Quartermaster "1" -- "*" Equipment : manages
+Station "1" -- "*" Equipment : stores
+Equipment "1" -- "0..1" Officer : checkedOutTo
+@enduml

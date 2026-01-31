@@ -1,0 +1,45 @@
+@startuml
+class Evidence {
+  -- Identification --
+  +evidenceId: String
+  +type: EvidenceType
+  +description: String
+  +discoveryDate: Date
+  +discoveryLocation: Location
+  +discoveredBy: Officer
+
+  -- Chain of Custody --
+  +custodyChain: List<CustodyEntry>
+  +currentHolder: Person
+  +storageLocation: String
+  +storageCondition: String
+
+  -- Analysis --
+  +analysisRequests: List<AnalysisRequest>
+  +analysisResults: List<AnalysisResult>
+  +isAnalyzed: boolean
+  +labCaseNumber: String
+
+  -- Disposition --
+  +disposition: Disposition
+  +dispositionDate: Date
+  +dispositionAuthority: String
+
+  -- Methods --
+  +addCustodyEntry(entry: CustodyEntry): void
+  +transferTo(newHolder: Person): void
+  +requestAnalysis(lab: Lab, tests: List<Test>): AnalysisRequest
+  +updateDisposition(disposition: Disposition): void
+  +getCustodyHistory(): List<CustodyEntry>
+}
+
+class CustodyEntry {
+  +dateTime: DateTime
+  +fromPerson: Person
+  +toPerson: Person
+  +purpose: String
+  +signature: Signature
+}
+
+Evidence "1" -- "*" CustodyEntry : has
+@enduml

@@ -1,0 +1,37 @@
+@startuml
+class Report {
+  -- Identification --
+  +reportId: String
+  +type: ReportType
+  +title: String
+  +creationDate: DateTime
+  +lastModified: DateTime
+
+  -- Content --
+  +author: Officer
+  +supervisor: Officer
+  +incident: Incident
+  +narrative: String
+  +statements: List<Statement>
+  +evidenceList: List<Evidence>
+  +witnesses: List<Witness>
+  +suspects: List<Suspect>
+
+  -- Administrative --
+  +status: ReportStatus
+  +approvalDate: DateTime
+  +approvingOfficer: Officer
+  +distributionList: List<Department>
+  +isConfidential: boolean
+
+  -- Methods --
+  +addSection(section: ReportSection): void
+  +addAttachment(file: File): void
+  +submitForReview(): void
+  +approve(approver: Officer): void
+  +reject(reason: String): void
+  +generatePDF(): File
+  +searchContent(keyword: String): boolean
+}
+
+@enduml

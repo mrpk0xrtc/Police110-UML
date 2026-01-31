@@ -1,0 +1,53 @@
+@startuml
+class Suspect {
+  -- Identification --
+  -aliases: List<String>
+  -ssn: String
+  -fbiNumber: String
+  -stateId: String
+  -photograph: Image
+
+  -- Criminal History --
+  -arrests: List<Arrest>
+  -convictions: List<Conviction>
+  -pendingCases: List<Case>
+  -probationStatus: ProbationStatus
+  -paroleStatus: ParoleStatus
+
+  -- Physical Description --
+  -height: String
+  -weight: double
+  -eyeColor: String
+  -hairColor: String
+  -distinguishingMarks: List<String>
+  -tattoos: List<Tattoo>
+
+  -- Methods --
+  +isWanted(): boolean
+  +getActiveWarrants(): List<Warrant>
+  +addArrestRecord(arrest: Arrest): void
+  +addAlias(alias: String): void
+  +getRiskLevel(): RiskLevel
+}
+
+class Arrest {
+  -arrestId: String
+  -date: Date
+  -charges: List<Charge>
+  -arrestingOfficer: Officer
+  -location: Location
+  +getBailAmount(): double
+}
+
+class Warrant {
+  -warrantId: String
+  -type: WarrantType
+  -issuedDate: Date
+  -expiryDate: Date
+  -issuingJudge: String
+  -isActive(): boolean
+}
+
+Suspect "1" -- "*" Arrest : has
+Suspect "0..*" -- "*" Warrant : subjectOf
+@enduml

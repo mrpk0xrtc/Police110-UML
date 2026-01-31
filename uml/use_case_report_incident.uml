@@ -1,0 +1,22 @@
+@startuml
+title Use Case: Report Incident
+
+usecase "Report Incident" as UC
+actor "Civilian" as C
+actor "Dispatcher" as D
+
+C --> UC : Initiates report
+D --> UC : Receives & logs
+note right of UC
+  ID: UC-001
+  Priority: High
+  Description: Citizen reports
+  a crime or incident
+  Precondition: System active
+  Postcondition: Incident logged
+end note
+
+UC .> (Enter Details) : include
+UC .> (Verify Location) : include
+UC .> (Assign Priority) : extend
+@enduml

@@ -1,0 +1,38 @@
+@startuml
+title Class Relationships: Case Composition
+
+class Case {
+  +caseId: String
+  +status: CaseStatus
+}
+
+class Evidence {
+  +evidenceId: String
+  +type: EvidenceType
+}
+
+class Report {
+  +reportId: String
+  +content: String
+}
+
+class Incident {
+  +incidentId: String
+  +type: IncidentType
+}
+
+class Suspect {
+  +suspectId: String
+}
+
+class Witness {
+  +witnessId: String
+}
+
+Case "1" *-- "0..*" Evidence : contains
+Case "1" *-- "1..*" Report : includes
+Case "1" *-- "1..*" Incident : comprises
+Case "1" *-- "0..*" Suspect : involves
+Case "1" *-- "0..*" Witness : references
+
+@enduml

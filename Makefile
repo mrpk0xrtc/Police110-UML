@@ -3,6 +3,7 @@
 build: *.tex
 	mkdir -p build
 	xelatex -output-directory build -shell-escape main.tex
+	xelatex -output-directory build -shell-escape main.tex
 
 gen_diagrams: clean
 	plantuml --format svg --output-dir images/ uml/*.uml

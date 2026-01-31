@@ -1,0 +1,46 @@
+@startuml
+title Class Relationships: Person, Incident, Report
+
+class Person {
+  +id: String
+  +name: String
+}
+
+class Incident {
+  +incidentId: String
+  +type: IncidentType
+}
+
+class Report {
+  +reportId: String
+  +content: String
+}
+
+class Officer {
+  +badgeNumber: String
+}
+
+class Witness {
+  +statement: String
+}
+
+class Victim {
+  +injuryDescription: String
+}
+
+class Suspect {
+  +arrestHistory: List<Arrest>
+}
+
+Person <|-- Officer
+Person <|-- Witness
+Person <|-- Victim
+Person <|-- Suspect
+
+Person "0..*" -- "1..*" Incident : involvedIn
+Incident "1" -- "1..*" Report : documentedBy
+Officer "1" -- "*" Report : authors
+Witness "0..*" -- "*" Incident : witnesses
+Victim "0..*" -- "*" Incident : victimOf
+Suspect "0..*" -- "*" Incident : suspectedIn
+@enduml

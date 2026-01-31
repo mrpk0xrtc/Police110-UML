@@ -1,0 +1,35 @@
+@startuml
+class Officer {
+  -- Primary Attributes --
+  -badgeNumber: String
+  -rank: Rank
+  -assignment: Assignment
+  -department: Department
+  -hireDate: Date
+  -shift: Shift
+  -partner: Officer
+  -status: OfficerStatus
+
+  -- Contact/Personal --
+  -emergencyContact: String
+  -medicalInfo: MedicalRecord
+  -certifications: List<Certification>
+  -disciplinaryRecord: List<DisciplinaryAction>
+
+  -- Equipment --
+  -assignedWeapon: Weapon
+  -assignedVehicle: Vehicle
+  -radioId: String
+  -bodyCameraId: String
+
+  -- Methods --
+  +patrol(zone: Zone): void
+  +respondToIncident(incident: Incident): Response
+  +arrest(suspect: Suspect): ArrestRecord
+  +issueCitation(violation: Violation): Citation
+  +fileReport(incident: Incident): Report
+  +requestBackup(): void
+  +updateStatus(newStatus: OfficerStatus): void
+}
+
+@enduml

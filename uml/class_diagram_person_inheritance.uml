@@ -1,0 +1,69 @@
+@startuml
+title Inheritance Hierarchy: Person and Related Classes
+
+class Person {
+  #id: String
+  #name: String
+  #dateOfBirth: Date
+  #address: String
+  #contactInfo: String
+  +getId(): String
+  +getName(): String
+  +getAge(): int
+}
+
+class Officer {
+  -badgeNumber: String
+  -rank: Rank
+  -department: Department
+  +patrol(zone: Zone): void
+  +arrest(suspect: Suspect): ArrestRecord
+}
+
+class Detective {
+  -specialization: Specialization
+  -caseLoad: List<Case>
+  +investigate(case: Case): void
+  +interview(witness: Witness): Statement
+}
+
+class Dispatcher {
+  -station: Station
+  -shift: Shift
+  +dispatch(unit: Unit, incident: Incident): void
+  +monitorCalls(): void
+}
+
+class Civilian {
+  -occupation: String
+  -emergencyContact: String
+}
+
+class Suspect {
+  -criminalRecord: List<Record>
+  -arrestHistory: List<Arrest>
+  +isWanted(): boolean
+}
+
+class Witness {
+  -statement: String
+  -contactStatus: ContactStatus
+  +provideStatement(): Statement
+}
+
+class Victim {
+  -injuryDescription: String
+  -impactStatement: String
+  +fileComplaint(): Complaint
+}
+
+Person <|-- Officer
+Person <|-- Detective
+Person <|-- Dispatcher
+Person <|-- Civilian
+Civilian <|-- Suspect
+Civilian <|-- Witness
+Civilian <|-- Victim
+
+Officer <|-- Detective
+@enduml

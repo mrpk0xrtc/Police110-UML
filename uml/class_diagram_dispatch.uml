@@ -1,0 +1,38 @@
+@startuml
+class Dispatch {
+  -- Core Attributes --
+  +dispatcherId: String
+  +name: String
+  +shift: Shift
+  +station: Station
+
+  -- Active Operations --
+  +activeCalls: List<EmergencyCall>
+  +assignedUnits: Map<Unit, Incident>
+  +pendingIncidents: Queue<Incident>
+  +radioChannel: String
+
+  -- Methods --
+  +receiveCall(callerInfo: Caller, emergency: String): EmergencyCall
+  +createIncident(call: EmergencyCall): Incident
+  +assignUnit(incident: Incident, unit: Unit): Assignment
+  +dispatchUnit(assignment: Assignment): void
+  +monitorUnitStatus(unit: Unit): Status
+  +updateIncidentStatus(incident: Incident, status: IncidentStatus): void
+  +requestAdditionalUnits(incident: Incident, unitsNeeded: int): void
+  +broadcastAlert(alert: Alert): void
+  +logCommunication(communication: Communication): void
+}
+
+class EmergencyCall {
+  +callId: String
+  +caller: Caller
+  +timeReceived: DateTime
+  +emergencyType: EmergencyType
+  +location: Location
+  +priority: Priority
+  +callRecording: AudioFile
+}
+
+Dispatch "1" -- "*" EmergencyCall : handles
+@enduml

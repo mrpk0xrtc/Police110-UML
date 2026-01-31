@@ -1,0 +1,54 @@
+@startuml
+class Case {
+  -- Identification --
+  +caseId: String
+  +title: String
+  +type: CaseType
+  +status: CaseStatus
+  +priority: Priority
+  +dateOpened: Date
+  +dateClosed: Date
+
+  -- Assignment --
+  +primaryDetective: Detective
+  +assignedOfficers: List<Officer>
+  +supervisor: Supervisor
+  +prosecutor: Prosecutor
+
+  -- Content --
+  +incidents: List<Incident>
+  +reports: List<Report>
+  +evidence: List<Evidence>
+  +suspects: List<Suspect>
+  +witnesses: List<Witness>
+  +victims: List<Victim>
+
+  -- Court --
+  +courtDates: List<CourtDate>
+  +charges: List<Charge>
+  +plea: Plea
+  +verdict: Verdict
+  +sentence: Sentence
+
+  -- Methods --
+  +assignDetective(detective: Detective): void
+  +addIncident(incident: Incident): void
+  +addEvidence(evidence: Evidence): void
+  +addSuspect(suspect: Suspect): void
+  +scheduleCourtDate(date: CourtDate): void
+  +updateStatus(newStatus: CaseStatus): void
+  +closeCase(closureReason: String): void
+  +calculateClearanceTime(): Duration
+}
+
+enum CaseStatus {
+  OPEN
+  UNDER_INVESTIGATION
+  SUSPECT_IDENTIFIED
+  ARREST_MADE
+  PROSECUTED
+  CONVICTED
+  CLOSED
+  COLD
+}
+@enduml

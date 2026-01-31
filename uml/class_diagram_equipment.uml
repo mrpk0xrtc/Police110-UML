@@ -1,0 +1,61 @@
+@startuml
+title <b>Class: Equipment</b>
+
+class Equipment {
+  -- Core Attributes --
+  -equipmentID: String
+  -type: EquipmentType
+  -serialNumber: String
+  -description: String
+
+  -- Assignment --
+  -checkedOutTo: Officer
+  -checkOutDate: Date
+  -expectedReturnDate: Date
+  -status: EquipmentStatus
+
+  -- Location --
+  -currentLocation: String
+  -assignedStation: Station
+  -storageLocation: String
+
+  -- Maintenance --
+  -lastMaintenanceDate: Date
+  -nextMaintenanceDate: Date
+  -condition: ConditionRating
+
+  -- Methods --
+  +getEquipmentID(): String
+  +getType(): EquipmentType
+  +getCheckedOutTo(): Officer
+  +checkOut(officer: Officer): boolean
+  +checkIn(): boolean
+  +updateStatus(status: EquipmentStatus): void
+  +isAvailable(): boolean
+  +scheduleMaintenance(date: Date): void
+  +updateLocation(location: String): void
+}
+
+enum EquipmentType {
+  FIREARM
+  BODY_ARMOR
+  HANDCUFFS
+  RADIO
+  BODY_CAMERA
+  COMPUTER
+  VEHICLE
+  OTHER
+}
+
+enum EquipmentStatus {
+  AVAILABLE
+  CHECKED_OUT
+  MAINTENANCE
+  REPAIR
+  RETIRED
+}
+
+Equipment "1" -- "0..1" Officer : checkedOutTo
+Equipment "1" -- "1" Station : assignedTo
+
+@enduml

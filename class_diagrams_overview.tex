@@ -1,26 +1,19 @@
 \section{\lr{Class Diagrams}}
 \subsection{\lr{Class Diagrams Overview}}
 
-\begin{latin}\textbf{Person:}\end{latin} s
-\begin{latin}\textbf{Case:}\end{latin} s
-\begin{latin}\textbf{Incident:}\end{latin} s
-\begin{latin}\textbf{Report:}\end{latin} s
-\newline\newline
-\textbf{روابط:}
+\hspace{1cm}
 
-\begin{latin}\textbf{involvedIn:}\end{latin} s
-\begin{latin}\textbf{includes:}\end{latin} s
-\begin{latin}\textbf{documentedBy:}\end{latin} s
-
-\begin{wrapfigure}{l}{2in}
-  \begin{center}
-    \begin{tikzpicture}[remember picture]
-    \node[anchor=north west]
-        at (current page.north west) {
-        \includesvg[width=13in, height=4.5in]{images/class_diagrams_overview}
-    };
-    \end{tikzpicture}
-  \end{center}
-\end{wrapfigure}
+\begin{latin}\textbf{involvedIn:}\end{latin} یک شخص میتواند در چندین حادثه حضور داشته باشد.
+\begin{latin}\textbf{includes:}\end{latin} یک حادثه میتواند شامل چندین پرونده باشد.
+\begin{latin}\textbf{documentedBy:}\end{latin} یک حادثه میتواند چندین گزارش داشته باشد.
 
 \hspace{1cm}
+
+\begin{center}
+  \begin{tikzpicture}[remember picture]
+  \node[anchor=north west]
+      at (current page.north west) {
+      \includesvg[width=14.5in, height=5in]{images/class_diagrams_overview}
+  };
+  \end{tikzpicture}
+\end{center}

@@ -1,0 +1,56 @@
+@startuml
+class Incident {
+  -- Core Attributes --
+  +incidentId: String
+  +type: IncidentType
+  +priority: Priority
+  +status: IncidentStatus
+  +location: Location
+  +timeReported: DateTime
+  +timeDispatched: DateTime
+  +timeArrived: DateTime
+  +timeCleared: DateTime
+
+  -- People Involved --
+  +reportingParty: Person
+  +involvedPersons: List<Person>
+  +assignedUnits: List<Unit>
+  +respondingOfficers: List<Officer>
+
+  -- Description --
+  +description: String
+  +narrative: String
+  +weaponsInvolved: boolean
+  +injuries: boolean
+  +fatalities: boolean
+
+  -- Methods --
+  +assignUnit(unit: Unit): void
+  +updateStatus(newStatus: IncidentStatus): void
+  +addNarrative(text: String): void
+  +calculateResponseTime(): Duration
+  +isActive(): boolean
+  +closeIncident(): void
+}
+
+enum IncidentType {
+  TRAFFIC_ACCIDENT
+  BURGLARY
+  ASSAULT
+  ROBBERY
+  DOMESTIC_VIOLENCE
+  DRUG_OFFENSE
+  HOMICIDE
+  TRAFFIC_STOP
+  PUBLIC_DISTURBANCE
+  OTHER
+}
+
+enum Priority {
+  EMERGENCY
+  HIGH
+  MEDIUM
+  LOW
+  INFORMATION
+}
+@enduml

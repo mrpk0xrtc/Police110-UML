@@ -1,0 +1,60 @@
+@startuml
+class Vehicle {
+  -- Identification --
+  +vehicleId: String
+  +licensePlate: String
+  +vin: String
+  +type: VehicleType
+  +make: String
+  +model: String
+  +year: int
+
+  -- Assignment --
+  +assignedOfficer: Officer
+  +assignedStation: Station
+  +assignmentDate: Date
+  +isPoolVehicle: boolean
+
+  -- Status --
+  +status: VehicleStatus
+  +fuelLevel: double
+  +mileage: double
+  +lastMaintenance: Date
+  +nextMaintenance: Date
+
+  -- Equipment --
+  +equipment: List<VehicleEquipment>
+  +radioSystem: Radio
+  +computerSystem: MDT
+  +emergencyLights: boolean
+  +siren: boolean
+
+  -- Methods --
+  +assignToOfficer(officer: Officer): void
+  +updateStatus(newStatus: VehicleStatus): void
+  +logMaintenance(service: Maintenance): void
+  +checkFuel(): double
+  +isAvailable(): boolean
+  +activateEmergencyLights(): void
+  +deactivateEmergencyLights(): void
+}
+
+enum VehicleType {
+  PATROL_CAR
+  SUV
+  MOTORCYCLE
+  VAN
+  SWAT_TRUCK
+  COMMAND_VEHICLE
+  K9_UNIT
+}
+
+enum VehicleStatus {
+  AVAILABLE
+  ASSIGNED
+  IN_USE
+  MAINTENANCE
+  OUT_OF_SERVICE
+  RESERVED
+}
+@enduml

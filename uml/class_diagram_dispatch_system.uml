@@ -1,0 +1,54 @@
+@startuml
+title Dispatch System Associations
+
+class Dispatch {
+  +dispatcherId: String
+  +name: String
+  +receiveCall(): EmergencyCall
+  +assignUnit(): Assignment
+  +monitorStatus(): void
+}
+
+class EmergencyCall {
+  +callId: String
+  +caller: Caller
+  +emergencyType: EmergencyType
+  +recordCall(): void
+}
+
+class Incident {
+  +incidentId: String
+  +type: IncidentType
+  +priority: Priority
+  +updateStatus(): void
+}
+
+class Unit {
+  +unitId: String
+  +type: UnitType
+  +status: UnitStatus
+  +assignToIncident(): void
+}
+
+class Officer {
+  +badgeNumber: String
+  +rank: Rank
+  +respondToDispatch(): void
+}
+
+class Vehicle {
+  +vehicleId: String
+  +type: VehicleType
+  +status: VehicleStatus
+  +assignToOfficer(): void
+}
+
+Dispatch "1" -- "*" EmergencyCall : processes
+Dispatch "1" -- "*" Incident : creates
+Dispatch "1" -- "*" Unit : manages
+EmergencyCall "1" -- "1" Incident : generates
+Incident "1" -- "*" Unit : assignedTo
+Unit "1" -- "1..*" Officer : consistsOf
+Unit "1" -- "1" Vehicle : includes
+Officer "1" -- "1" Vehicle : assignedTo
+@enduml

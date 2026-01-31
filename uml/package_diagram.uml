@@ -1,0 +1,50 @@
+@startuml
+title Package Diagram: System Modules
+
+package "Core Modules" {
+  package "Incident Management" {
+    [Dispatch]
+    [Response]
+    [Reporting]
+  }
+
+  package "Personnel Management" {
+    [Officer Records]
+    [Training]
+    [Scheduling]
+  }
+
+  package "Investigation" {
+    [Case Management]
+    [Evidence Tracking]
+    [Witness Management]
+  }
+}
+
+package "Support Modules" {
+  package "Equipment" {
+    [Vehicle Fleet]
+    [Weapons Inventory]
+    [Technology Assets]
+  }
+
+  package "Facilities" {
+    [Station Management]
+    [Jail Operations]
+    [Evidence Storage]
+  }
+}
+
+package "External Interfaces" {
+  [NCIC/FBI Links]
+  [Court Systems]
+  [Other Agencies]
+  [Public Portal]
+}
+
+[Incident Management] --> [Personnel Management]
+[Investigation] --> [Incident Management]
+[Investigation] --> [Evidence Tracking]
+[Personnel Management] --> [Equipment]
+[External Interfaces] --> [Core Modules]
+@enduml

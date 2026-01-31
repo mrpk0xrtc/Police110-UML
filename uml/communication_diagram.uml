@@ -1,0 +1,28 @@
+@startuml
+title Communication: Multi-Agency Response
+
+actor "Police Dispatch" as PD
+participant "Police Units" as PU
+participant "Fire Dispatch" as FD
+participant "Fire Units" as FU
+participant "EMS Dispatch" as ED
+participant "EMS Units" as EU
+participant "Command Post" as CP
+
+PD -> FD : Notify fire needed
+PD -> ED : Request EMS
+FD -> FU : Dispatch fire units
+ED -> EU : Dispatch ambulances
+PU -> CP : Establish command
+FU -> CP : Report on scene
+EU -> CP : Report medical status
+CP -> PU : Assign perimeter
+CP -> FU : Assign fire attack
+CP -> EU : Assign triage area
+PU -> PD : Situation updates
+FU -> FD : Progress reports
+EU -> ED : Patient status
+PD -> FD : Request additional
+PD -> ED : Request more units
+CP -> All : Unified command meeting
+@enduml

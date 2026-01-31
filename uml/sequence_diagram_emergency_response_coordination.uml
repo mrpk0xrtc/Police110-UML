@@ -1,0 +1,29 @@
+@startuml
+title Sequence: Emergency Response Coordination
+
+actor "Dispatcher" as D
+participant "Police Unit" as PU
+participant "Fire Department" as FD
+participant "EMS" as EMS
+participant "Incident Command" as IC
+
+D -> PU : Dispatch to emergency
+D -> FD : Notify fire needed
+D -> EMS : Request ambulance
+PU -> D : Arrive on scene
+PU -> D : Situation assessment
+D -> IC : Establish command
+
+par Coordination
+  PU -> IC : Perimeter security
+  FD -> IC : Fire suppression
+  EMS -> IC : Medical triage
+  IC -> All : Unified updates
+end
+
+IC -> D : Request additional resources
+D -> PU : Send backup units
+IC -> All : Incident resolved
+All -> IC : Clear from scene
+IC -> D : Close incident
+@enduml

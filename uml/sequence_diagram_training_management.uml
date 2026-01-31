@@ -1,0 +1,29 @@
+@startuml
+title Sequence: Training Management
+
+actor "Training Officer" as TO
+participant "Training System" as TS
+participant "Officer" as O
+participant "HR Database" as HR
+
+TO -> TS : Schedule training session
+TS -> TO : Confirm schedule
+TO -> TS : Enroll officers
+TS -> O : Send training notification
+O -> TS : Confirm attendance
+TS -> HR : Update training records
+
+alt On training day
+  TO -> O : Conduct training
+  O -> TO : Participate/complete
+  TO -> TS : Record completion
+  TS -> HR : Update certifications
+  HR -> O : Send confirmation
+else Reschedule needed
+  TO -> TS : Cancel/reschedule
+  TS -> O : Send cancellation
+  TS -> TO : New schedule options
+end
+
+TS -> TO : Generate training report
+@enduml

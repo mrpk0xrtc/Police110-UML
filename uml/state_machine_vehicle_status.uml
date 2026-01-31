@@ -1,0 +1,34 @@
+@startuml
+title State Machine: Vehicle Status
+
+[*] --> Available
+Available --> Assigned : assign to officer
+Assigned --> InUse : officer checks out
+InUse --> Assigned : officer returns
+InUse --> Maintenance : issue reported
+Assigned --> Available : reassignment
+
+Available --> Maintenance : scheduled service
+Maintenance --> Repair : issues found
+Repair --> Maintenance : fix incomplete
+Repair --> Available : repairs complete
+Maintenance --> Available : service complete
+
+InUse --> OutOfService : major failure
+Assigned --> OutOfService : safety concern
+OutOfService --> Repair : repair authorized
+OutOfService --> Retired : beyond repair
+
+Available --> Reserved : future assignment
+Reserved --> Assigned : assignment time
+Reserved --> Available : reservation cancelled
+
+Retired --> [*]
+
+note right of Maintenance
+  Regular servicing
+  Inspection
+  Cleaning
+  Equipment check
+end note
+@enduml

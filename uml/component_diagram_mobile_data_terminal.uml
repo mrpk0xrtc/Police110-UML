@@ -1,0 +1,23 @@
+@startuml
+title Component: Mobile Data Terminal
+
+component "Mobile Data Terminal" {
+  component "Dispatch Display" as DD
+  component "Report Interface" as RI
+  component "Query Tool" as QT
+  component "GPS Tracker" as GPS
+  component "Alert Receiver" as AR
+}
+
+DD --> RI : incident data
+RI --> QT : queries
+GPS --> DD : location
+AR --> DD : alerts
+QT --> GPS : location lookup
+
+note right
+  In-vehicle computer for
+  officers to receive calls,
+  file reports, query data
+end note
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+title State Machine: Case Status
+
+[*] --> Open
+Open --> UnderInvestigation : assign detective
+UnderInvestigation --> SuspectIdentified : evidence found
+SuspectIdentified --> ArrestMade : warrant executed
+ArrestMade --> Prosecuted : DA files charges
+Prosecuted --> Convicted : court verdict
+Prosecuted --> Closed : case dismissed
+
+UnderInvestigation --> Closed : insufficient evidence
+SuspectIdentified --> UnderInvestigation : new leads
+ArrestMade --> UnderInvestigation : new evidence
+Convicted --> Closed : sentencing complete
+
+Open --> Inactive : no progress
+Inactive --> UnderInvestigation : new information
+Inactive --> Cold : prolonged inactivity
+Cold --> UnderInvestigation : breakthrough
+
+Closed --> [*]
+
+note right of UnderInvestigation
+  Active investigation phase
+  Evidence collection
+  Witness interviews
+  Lead follow-up
+end note
+@enduml

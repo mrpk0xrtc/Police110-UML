@@ -1,0 +1,75 @@
+@startuml
+title Deployment Diagram: Police IT Infrastructure
+
+node "Police Headquarters Data Center" {
+  database "Primary Database Server" as DB1
+  database "Backup Database Server" as DB2
+  node "Application Server Cluster" {
+    component "RMS Core" as RMS
+    component "CAD Engine" as CAD
+    component "Web Services" as WS
+  }
+  node "File Server" as FS
+}
+
+node "Dispatch Center" {
+  artifact "Dispatcher Workstation 1" as DW1
+  artifact "Dispatcher Workstation 2" as DW2
+  artifact "Radio Console" as RC
+  artifact "Phone System" as PS
+}
+
+node "Patrol Car" {
+  artifact "Mobile Data Terminal" as MDT
+  artifact "Vehicle Radio" as VR
+  artifact "Body Camera" as BC
+  artifact "Dashboard Camera" as DC
+}
+
+node "Field Office" {
+  artifact "Officer Workstation" as OW
+  artifact "Evidence Room Computer" as ERC
+  artifact "Detective Computer" as DC2
+}
+
+cloud "External Services" {
+  component "State Database" as STATE
+  component "NCIC/FBI System" as NCIC
+  component "Court Systems" as COURT
+  component "EMS/Fire Systems" as EMS
+}
+
+' Connections
+DW1 --> RMS : LAN / HTTP
+DW2 --> RMS : LAN / HTTP
+MDT --> CAD : Wireless / VPN
+OW --> RMS : WAN / HTTPS
+RC --> VR : Radio Signal
+BC --> FS : WiFi Sync
+DC --> FS : Auto Upload
+
+RMS --> DB1 : JDBC
+DB1 --> DB2 : Replication
+CAD --> STATE : Secure API
+RMS --> NCIC : Secure Gateway
+CAD --> EMS : Emergency Interface
+
+DW1 --> PS : VoIP
+DW1 --> RC : Serial
+MDT --> VR : Bluetooth
+ERC --> RMS : Evidence Upload
+
+note on link
+  Security: Encrypted connections
+  Redundancy: Failover systems
+  Monitoring: 24/7 surveillance
+end note
+
+legend right
+  = Network Legend =
+  <color:blue>LAN</color> - Local Area Network
+  <color:green>WAN</color> - Wide Area Network
+  <color:red>VPN</color> - Virtual Private Network
+  <color:purple>Wireless</color> - Mobile Data
+end legend
+@enduml

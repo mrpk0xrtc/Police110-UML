@@ -1,0 +1,22 @@
+@startuml
+title Component Diagram: Police System Overview
+
+package "Police Organization System" {
+  component "Computer-Aided Dispatch" as CAD
+  component "Records Management" as RMS
+  component "Mobile Data Terminal" as MDT
+  component "Jail Management" as JMS
+  component "Evidence Management" as EMS
+  component "Crime Analysis" as CAS
+  component "Personnel Management" as PMS
+}
+
+CAD --> RMS : incident data
+RMS --> MDT : assignment info
+MDT --> CAD : status updates
+RMS --> JMS : booking records
+RMS --> EMS : evidence links
+EMS --> CAS : analysis data
+RMS --> PMS : personnel records
+CAD --> PMS : officer status
+@enduml

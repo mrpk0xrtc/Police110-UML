@@ -1,0 +1,23 @@
+@startuml
+title Component: Jail Management System
+
+component "Jail Management System" {
+  component "Booking Module" as BM
+  component "Cell Assigner" as CA
+  component "Medical Tracker" as MT
+  component "Release System" as RS
+  component "Visitor Log" as VL
+}
+
+BM --> CA : inmate data
+BM --> MT : medical info
+CA --> RS : release dates
+BM --> VL : visitor list
+RS --> VL : release notice
+
+note right
+  Manages inmate booking,
+  housing, medical care,
+  and release procedures
+end note
+@enduml

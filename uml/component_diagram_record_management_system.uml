@@ -1,0 +1,23 @@
+@startuml
+title Component: Records Management System
+
+component "Records Management System" {
+  component "Incident Database" as IDB
+  component "Report Generator" as RG
+  component "Person Database" as PDB
+  component "Query Interface" as QI
+  component "Statistics Engine" as SE
+}
+
+IDB --> RG : provides data
+PDB --> RG : person data
+QI --> IDB : searches
+QI --> PDB : searches
+RG --> SE : aggregates data
+
+note right
+  Central repository for all
+  police records, reports,
+  and statistical data
+end note
+@enduml

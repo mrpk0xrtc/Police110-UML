@@ -1,0 +1,25 @@
+@startuml
+title Use Case: Testify in Court
+
+actor "Officer" as O
+actor "Prosecutor" as P
+
+usecase "Testify in Court" as UC
+
+O --> UC : provides testimony
+P --> UC : questions witness
+
+UC .> (Receive Subpoena) : include
+UC .> (Review Case File) : include
+UC .> (Meet with Prosecutor) : include
+UC .> (Appear in Court) : include
+UC .> (Give Testimony) : include
+UC .> (Document Appearance) : include
+
+note right of UC
+  Officer provides sworn testimony
+  in legal proceedings related to
+  cases they investigated or
+  incidents they responded to.
+end note
+@enduml

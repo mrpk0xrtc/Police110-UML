@@ -1,0 +1,23 @@
+@startuml
+title Component: Dispatch System
+
+component "Dispatch System" {
+  component "Call Taker" as CT
+  component "Dispatcher Console" as DC
+  component "Radio Control" as RC
+  component "110 Interface" as N110
+  component "Alert System" as AS
+}
+
+CT --> N911 : receives calls
+DC --> RC : transmits to units
+DC --> AS : sends alerts
+CT --> DC : transfers calls
+RC --> DC : receives updates
+
+note right
+  Handles emergency calls,
+  unit dispatch, and
+  real-time coordination
+end note
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+title Component: HR & Training System
+
+component "HR & Training System" {
+  component "Personnel Records" as PR
+  component "Training Scheduler" as TS
+  component "Certification Tracker" as CT
+  component "Performance Evaluator" as PE
+  component "Shift Manager" as SM
+}
+
+PR --> TS : officer data
+TS --> CT : training records
+CT --> PE : certifications
+PR --> SM : availability
+SM --> TS : schedule conflicts
+
+note right
+  Manages officer records,
+  training, certifications,
+  and scheduling
+end note
+@enduml

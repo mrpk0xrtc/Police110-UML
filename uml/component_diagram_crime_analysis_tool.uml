@@ -1,0 +1,23 @@
+@startuml
+title Component: Crime Analysis Tool
+
+component "Crime Analysis Tool" {
+  component "Data Miner" as DM
+  component "Pattern Detector" as PD
+  component "Mapping Engine" as ME
+  component "Report Generator" as RG
+  component "Predictive Module" as PM
+}
+
+DM --> PD : crime data
+PD --> ME : patterns
+ME --> RG : maps
+DM --> PM : historical data
+PM --> RG : forecasts
+
+note right
+  Analyzes crime patterns,
+  generates heat maps,
+  predicts trends
+end note
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+title Component: Evidence Management System
+
+component "Evidence Management System" {
+  component "Chain of Custody" as CC
+  component "Storage Tracker" as ST
+  component "Lab Interface" as LI
+  component "Disposition Manager" as DM
+  component "Audit Module" as AM
+}
+
+CC --> ST : custody updates
+ST --> LI : lab requests
+LI --> CC : analysis results
+CC --> DM : release orders
+AM --> all : audits all
+
+note right
+  Tracks evidence from collection
+  to disposition with complete
+  chain of custody records
+end note
+@enduml

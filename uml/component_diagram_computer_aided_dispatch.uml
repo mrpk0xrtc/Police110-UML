@@ -1,0 +1,23 @@
+@startuml
+title Component: Computer-Aided Dispatch
+
+component "Computer-Aided Dispatch" {
+  component "Incident Manager" as IM
+  component "Unit Assigner" as UA
+  component "Mapping Module" as MM
+  component "Status Tracker" as ST
+  component "Priority Calculator" as PC
+}
+
+IM --> UA : incident details
+UA --> ST : unit assignments
+MM --> UA : location data
+PC --> IM : priority levels
+ST --> MM : unit positions
+
+note right
+  Automates dispatch logic,
+  tracks units, calculates
+  response priorities
+end note
+@enduml

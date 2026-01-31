@@ -1,0 +1,20 @@
+@startuml
+title Dispatch Subsystem Use Cases
+
+left to right direction
+actor "Dispatcher" as D
+
+rectangle "Dispatch Functions" {
+  (Dispatch Unit) as UC1
+  (Handle Emergency Call) as UC2
+  (Monitor Officer Status) as UC3
+  (Coordinate Multi-Unit) as UC4
+  (Log Communications) as UC5
+}
+
+D --> UC1
+D --> UC2
+D --> UC3
+D --> UC4
+D --> UC5
+@enduml

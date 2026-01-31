@@ -1,0 +1,21 @@
+@startuml
+title Use Case: Analyze Crime Data
+
+usecase "Analyze Crime Data" as UC
+actor "Crime Analyst" as CA
+actor "Police Chief" as PC
+
+CA --> UC : Conducts analysis
+PC --> UC : Uses for strategy
+note right of UC
+  ID: UC-017
+  Tools: GIS mapping,
+  Statistical software,
+  Pattern recognition
+end note
+
+UC --> (Collect Data) : step1
+UC --> (Identify Patterns) : step2
+UC --> (Generate Reports) : step3
+UC --> (Recommend Actions) : step4
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+title Administration Subsystem Use Cases
+
+left to right direction
+actor "Administrator" as A
+actor "HR Manager" as HR
+actor "Training Officer" as TO
+
+rectangle "Administration Functions" {
+  (Manage Personnel) as UC1
+  (Manage Equipment) as UC2
+  (Manage Training) as UC3
+  (Generate Statistics) as UC4
+  (Audit Systems) as UC5
+}
+
+A --> UC1
+HR --> UC1
+A --> UC2
+TO --> UC3
+A --> UC4
+A --> UC5
+@enduml

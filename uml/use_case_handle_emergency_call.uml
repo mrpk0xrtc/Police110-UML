@@ -1,0 +1,20 @@
+@startuml
+title Use Case: Handle Emergency Call
+
+usecase "Handle Emergency Call" as UC
+actor "Caller" as C
+actor "Dispatcher" as D
+
+C --> UC : Makes 911 call
+D --> UC : Processes emergency
+note right of UC
+  ID: UC-013
+  Priority: Highest
+  Time-critical response
+end note
+
+UC .> (Answer Call) : include
+UC .> (Assess Emergency) : include
+UC .> (Dispatch Units) : include
+UC .> (Provide Instructions) : extend
+@enduml

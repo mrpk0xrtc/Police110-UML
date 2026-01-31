@@ -1,0 +1,21 @@
+@startuml
+title Use Case: Patrol Area
+
+usecase "Patrol Area" as UC
+actor "Officer" as O
+actor "Dispatcher" as D
+
+O --> UC : Conducts patrol
+D --> UC : Monitors patrol
+note right of UC
+  ID: UC-009
+  Description: Routine area
+  surveillance and response
+  Shift-based activity
+end note
+
+UC .> (Check Vehicle) : include
+UC .> (Receive Briefing) : include
+UC .> (Monitor Radio) : include
+UC .> (Report Status) : include
+@enduml

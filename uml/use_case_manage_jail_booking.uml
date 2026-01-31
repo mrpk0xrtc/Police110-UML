@@ -1,0 +1,20 @@
+@startuml
+title Use Case: Manage Jail Booking
+
+usecase "Manage Jail Booking" as UC
+actor "Jail Officer" as JO
+actor "Transport Officer" as TO
+
+JO --> UC : Processes booking
+TO --> UC : Delivers suspect
+note right of UC
+  ID: UC-016
+  Steps: Intake, Search,
+  Medical screening, Housing
+end note
+
+UC .> (Intake Processing) : include
+UC .> (Property Inventory) : include
+UC .> (Medical Screening) : include
+UC .> (Assign Cell) : include
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+title Public Interface Use Cases
+
+left to right direction
+actor "Civilian" as C
+actor "Victim" as V
+actor "Witness" as W
+
+rectangle "Public Services" {
+  (Report Incident) as UC1
+  (File Complaint) as UC2
+  (Request Records) as UC3
+  (Pay Citation) as UC4
+  (Apply for Permit) as UC5
+}
+
+C --> UC1
+V --> UC1
+W --> UC1
+C --> UC2
+C --> UC3
+C --> UC4
+C --> UC5
+@enduml

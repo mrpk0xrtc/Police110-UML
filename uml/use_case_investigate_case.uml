@@ -1,0 +1,21 @@
+@startuml
+title Use Case: Investigate Case
+
+usecase "Investigate Case" as UC
+actor "Detective" as DE
+actor "Officer" as O
+
+DE --> UC : Leads investigation
+O --> UC : Assists
+note right of UC
+  ID: UC-004
+  Description: Systematic
+  investigation of crime
+  Duration: Days to months
+end note
+
+UC --> (Gather Evidence) : step1
+UC --> (Interview Witnesses) : step2
+UC --> (Analyze Data) : step3
+UC --> (Identify Suspect) : step4
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+title Use Case: Manage Personnel
+
+usecase "Manage Personnel" as UC
+actor "HR Manager" as HR
+actor "Police Chief" as PC
+
+HR --> UC : Maintains records
+PC --> UC : Views personnel data
+note right of UC
+  ID: UC-007
+  Description: Handle officer
+  records, assignments, evaluations
+end note
+
+UC .> (Add New Officer) : include
+UC .> (Update Records) : include
+UC .> (Assign Duties) : include
+UC .> (Process Retirement) : include
+@enduml

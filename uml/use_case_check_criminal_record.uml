@@ -1,0 +1,20 @@
+@startuml
+title Use Case: Check Criminal Record
+
+usecase "Check Criminal Record" as UC
+actor "Officer" as O
+actor "Detective" as DE
+
+O --> UC : Queries during stop
+DE --> UC : Researches for case
+note right of UC
+  ID: UC-010
+  System: NCIC/State databases
+  Authorization required
+end note
+
+UC --> (Enter Identifier) : step1
+UC --> (Submit Query) : step2
+UC --> (Review Results) : step3
+UC --> (Document Check) : step4
+@enduml

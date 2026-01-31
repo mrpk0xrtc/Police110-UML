@@ -1,0 +1,19 @@
+@startuml
+title Use Case: File Evidence
+
+usecase "File Evidence" as UC
+actor "Officer" as O
+actor "Evidence Clerk" as EC
+
+O --> UC : Submits evidence
+EC --> UC : Logs & stores
+note right of UC
+  ID: UC-005
+  Critical: Chain of custody
+  Legal requirement
+end note
+
+UC .> (Tag Evidence) : include
+UC .> (Document Chain) : include
+UC .> (Store Securely) : include
+@enduml

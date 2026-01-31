@@ -1,0 +1,20 @@
+@startuml
+title Use Case: Issue Citation
+
+usecase "Issue Citation" as UC
+actor "Officer" as O
+actor "Violator" as V
+
+O --> UC : Issues ticket
+V --> UC : Receives citation
+note right of UC
+  ID: UC-015
+  Types: Traffic, Parking,
+  Municipal violations
+end note
+
+UC .> (Observe Violation) : include
+UC .> (Stop Violator) : include
+UC .> (Write Citation) : include
+UC .> (Explain Rights) : include
+@enduml

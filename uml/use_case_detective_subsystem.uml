@@ -1,0 +1,22 @@
+@startuml
+title Detective Subsystem Use Cases
+
+left to right direction
+actor "Detective" as DE
+
+rectangle "Investigation Functions" {
+  (Investigate Case) as UC1
+  (Interview Witness) as UC2
+  (Analyze Evidence) as UC3
+  (Monitor Surveillance) as UC4
+  (Request Warrant) as UC5
+  (Close Case) as UC6
+}
+
+DE --> UC1
+DE --> UC2
+DE --> UC3
+DE --> UC4
+DE --> UC5
+DE --> UC6
+@enduml

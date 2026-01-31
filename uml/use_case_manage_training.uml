@@ -1,0 +1,20 @@
+@startuml
+title Use Case: Manage Training
+
+usecase "Manage Training" as UC
+actor "Training Officer" as TO
+actor "Officer" as O
+
+TO --> UC : Schedules training
+O --> UC : Attends training
+note right of UC
+  ID: UC-012
+  Types: Firearms, Legal updates,
+  Tactical, First aid
+end note
+
+UC --> (Identify Needs) : step1
+UC --> (Schedule Sessions) : step2
+UC --> (Conduct Training) : step3
+UC --> (Record Completion) : step4
+@enduml

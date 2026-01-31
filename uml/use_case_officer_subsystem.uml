@@ -1,0 +1,24 @@
+@startuml
+title Officer Subsystem Use Cases
+
+left to right direction
+actor "Officer" as O
+
+rectangle "Officer Functions" {
+  (Patrol Area) as UC1
+  (Arrest Suspect) as UC2
+  (Issue Citation) as UC3
+  (File Evidence) as UC4
+  (Generate Report) as UC5
+  (Check Criminal Record) as UC6
+  (Testify in Court) as UC7
+}
+
+O --> UC1
+O --> UC2
+O --> UC3
+O --> UC4
+O --> UC5
+O --> UC6
+O --> UC7
+@enduml

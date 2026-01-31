@@ -1,0 +1,20 @@
+@startuml
+title Use Case: Manage Equipment
+
+usecase "Manage Equipment" as UC
+actor "Quartermaster" as Q
+actor "Officer" as O
+
+Q --> UC : Maintains inventory
+O --> UC : Checks out equipment
+note right of UC
+  ID: UC-008
+  Equipment types: Weapons,
+  Vehicles, Radios, Body cameras
+end note
+
+UC --> (Track Inventory) : step1
+UC --> (Issue Equipment) : step2
+UC --> (Schedule Maintenance) : step3
+UC --> (Retire Equipment) : step4
+@enduml

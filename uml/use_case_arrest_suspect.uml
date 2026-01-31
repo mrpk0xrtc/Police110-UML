@@ -1,0 +1,20 @@
+@startuml
+title Use Case: Arrest Suspect
+
+usecase "Arrest Suspect" as UC
+actor "Officer" as O
+actor "Suspect" as S
+
+O --> UC : Performs arrest
+S --> UC : Is arrested
+note right of UC
+  ID: UC-003
+  Risk Level: High
+  Requirements: Legal authority,
+  Proper procedure
+end note
+
+UC .> (Read Rights) : include
+UC .> (Restrain Suspect) : include
+UC .> (Transport to Jail) : extend
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+title Use Case: Monitor Surveillance
+
+usecase "Monitor Surveillance" as UC
+actor "Surveillance Officer" as SO
+actor "Detective" as DE
+
+SO --> UC : Watches feeds
+DE --> UC : Reviews footage
+note right of UC
+  ID: UC-014
+  Sources: CCTV, Body cams,
+  Traffic cameras
+end note
+
+UC --> (Access Feeds) : step1
+UC --> (Monitor Activity) : step2
+UC --> (Record Incidents) : step3
+UC --> (Archive Footage) : step4
+@enduml

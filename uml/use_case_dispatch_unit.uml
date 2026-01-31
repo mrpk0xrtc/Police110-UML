@@ -1,0 +1,21 @@
+@startuml
+title Use Case: Dispatch Unit
+
+usecase "Dispatch Unit" as UC
+actor "Dispatcher" as D
+actor "Officer" as O
+
+D --> UC : Assigns officer
+O --> UC : Receives assignment
+note right of UC
+  ID: UC-002
+  Description: Dispatcher assigns
+  officer to incident
+  Primary Actor: Dispatcher
+  Frequency: 100+ times daily
+end note
+
+UC --> (Select Available Unit) : step1
+UC --> (Communicate Details) : step2
+UC --> (Monitor Response) : step3
+@enduml

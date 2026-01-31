@@ -1,0 +1,34 @@
+@startuml
+title State Machine: Evidence State
+
+[*] --> Collected
+Collected : Discovered at scene\nInitial documentation
+
+Collected --> Logged : Submitted to evidence
+Logged : Entered in system\nChain begins
+
+Logged --> Stored : Placed in secure storage
+Stored : In evidence room\nProper conditions
+
+Stored --> CheckedOut : Removed for analysis
+CheckedOut : In possession of\nauthorized personnel
+
+CheckedOut --> InAnalysis : At crime lab
+InAnalysis : Being tested/analyzed\nScientific examination
+
+InAnalysis --> Analyzed : Testing complete
+Analyzed : Results documented\nReady for return
+
+Analyzed --> Stored : Returned to storage
+Stored --> CheckedOut : Additional analysis needed
+
+Stored --> InCourt : Presented as exhibit
+InCourt : Court proceedings\nUnder court control
+
+InCourt --> Stored : Returned from court
+
+Stored --> Disposed : Final disposition
+Disposed : Destroyed/returned\nAccording to policy
+
+Disposed --> [*]
+@enduml

@@ -1,0 +1,39 @@
+@startuml
+title State Machine: Officer Status
+
+[*] --> OffDuty
+OffDuty : Not scheduled\nAvailable for call
+
+OffDuty --> OnDuty : Shift starts
+OnDuty : Scheduled shift\nPatrol/desk duty
+
+OnDuty --> Available : Ready for calls
+Available : In service\nAwaiting assignments
+
+Available --> Dispatched : Receives call
+Dispatched : Assigned to incident\nEn route
+
+Dispatched --> OnScene : Arrives at location
+OnScene : At incident location\nHandling situation
+
+OnScene --> InPursuit : Suspect flees
+InPursuit : Actively pursuing\nHigh risk
+
+InPursuit --> Arresting : Apprehends suspect
+Arresting : Making arrest\nSecuring scene
+
+Arresting --> Transporting : Moving suspect
+Transporting : To station/jail\nIn vehicle
+
+Transporting --> ReportWriting : After transport
+ReportWriting : Documenting incident\nFiling reports
+
+ReportWriting --> Available : Reports complete
+OnScene --> Available : Incident resolved
+Transporting --> Available : Handoff complete
+
+InPursuit --> Emergency : Officer needs help
+Emergency --> [*] : Emergency resolved
+
+OnDuty --> OffDuty : Shift ends
+@enduml

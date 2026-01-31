@@ -1,0 +1,32 @@
+@startuml
+title State Machine: Incident Lifecycle
+
+[*] --> Reported
+Reported : Call received\nIncident created
+
+Reported --> Verified : Validate details
+Verified : Location confirmed\nPriority assigned
+
+Verified --> Dispatched : Units assigned
+Dispatched : Officers notified\nEn route
+
+Dispatched --> Responding : Units responding
+Responding : On scene arrival\nIn progress
+
+Responding --> Investigating : Scene processing
+Investigating : Evidence collection\nWitness interviews
+
+Investigating --> Resolved : Immediate resolution
+Resolved : Initial handling complete
+
+Resolved --> Documenting : Report writing
+Documenting : Official reports\nDocumentation
+
+Documenting --> Closed : All reports filed
+Closed : Incident closed\nNo further action
+
+Resolved --> CaseGenerated : Requires follow-up
+CaseGenerated --> [*] : New case created
+
+Closed --> [*]
+@enduml

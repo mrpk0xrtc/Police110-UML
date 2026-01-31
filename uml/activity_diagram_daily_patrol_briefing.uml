@@ -1,0 +1,31 @@
+@startuml
+title Activity: Daily Patrol Briefing
+
+partition "Pre-Shift" {
+  :Arrive at Station;
+  :Check Equipment;
+  :Review Patrol Vehicle;
+  :Receive Assignment;
+}
+
+partition "Briefing" {
+  :Attend Roll Call;
+  :Receive Updates;
+  :Review Hot Spots;
+  :Coordinate with Partner;
+}
+
+partition "Patrol" {
+  :Begin Patrol Route;
+  :Monitor Radio;
+  :Conduct Proactive Checks;
+  :Respond to Calls;
+}
+
+partition "End Shift" {
+  :Complete Reports;
+  :Return Equipment;
+  :Brief Relief Officer;
+  :Clock Out;
+}
+@enduml

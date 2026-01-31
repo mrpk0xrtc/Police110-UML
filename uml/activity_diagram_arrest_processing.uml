@@ -1,0 +1,19 @@
+@startuml
+title Activity: Arrest Processing
+
+start
+:Observe Violation/Probable Cause;
+:Stop & Identify Suspect;
+if (Resistance?) then (Yes)
+  :Use Appropriate Force;
+else (No)
+  :Proceed with Arrest;
+endif
+:Read Miranda Rights;
+:Handcuff Suspect;
+:Search Incident to Arrest;
+:Transport to Station;
+:Booking Process;
+:Case Documentation;
+stop
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+title Activity: Evidence Chain of Custody
+
+start
+:Discover/Collect Evidence;
+:Tag with Unique ID;
+:Document Location/Time;
+:Place in Evidence Bag;
+:Sign Custody Log;
+:Transport to Evidence Room;
+:Evidence Clerk Receives;
+:Log in Evidence System;
+:Store in Secure Location;
+repeat
+  :Check-out for Analysis;
+  :Return after Analysis;
+repeat while (Analysis Complete?) is (No)
+->Yes;
+:Final Disposition;
+stop
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+title Activity: Report to Dispatch Flow
+
+start
+:Receive Call/Report;
+if (Emergency?) then (Yes)
+  :Priority Dispatch;
+else (No)
+  :Standard Processing;
+endif
+:Log Incident Details;
+:Verify Location;
+:Identify Available Units;
+:Assign Officer(s);
+:Communicate Assignment;
+:Monitor Response;
+stop
+@enduml

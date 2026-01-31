@@ -1,0 +1,26 @@
+@startuml
+title Activity: Crime Investigation Workflow
+
+start
+:Case Assignment;
+:Initial Scene Assessment;
+fork
+  :Collect Physical Evidence;
+fork again
+  :Interview Witnesses;
+fork again
+  :Review Surveillance;
+end fork
+:Analyze Collected Data;
+:Identify Suspect(s);
+if (Enough Evidence?) then (Yes)
+  :Obtain Arrest Warrant;
+  :Execute Arrest;
+else (No)
+  :Continue Investigation;
+  :Gather Additional Evidence;
+endif
+:Prepare Case File;
+:Submit to Prosecutor;
+stop
+@enduml

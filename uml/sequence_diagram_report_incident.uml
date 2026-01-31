@@ -1,0 +1,23 @@
+@startuml
+title Sequence: Report an Incident
+
+actor Civilian as C
+participant "Call Center" as CC
+participant Dispatcher as D
+participant "RMS" as RMS
+participant Officer as O
+
+C -> CC : Dial 911
+CC -> C : Answer call
+C -> CC : Describe emergency
+CC -> D : Transfer call with details
+D -> RMS : Create incident record
+RMS -> D : Return incident ID
+D -> D : Assess priority
+D -> O : Dispatch via radio/MDT
+O -> D : Acknowledge assignment
+D -> RMS : Update incident status
+D -> C : Provide ETA if possible
+O -> D : Arrive on scene
+D -> RMS : Update arrival time
+@enduml

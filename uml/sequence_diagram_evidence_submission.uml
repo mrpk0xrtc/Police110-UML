@@ -1,0 +1,24 @@
+@startuml
+title Sequence: Evidence Submission
+
+participant Officer as O
+participant "Evidence Clerk" as EC
+participant "Evidence System" as ES
+participant "Lab Technician" as LT
+participant Detective as D
+
+O -> EC : Submit evidence item
+EC -> O : Verify submission form
+O -> EC : Sign custody log
+EC -> ES : Create evidence record
+ES -> EC : Return evidence ID
+EC -> ES : Log initial custody
+EC -> ES : Assign storage location
+EC -> D : Notify evidence available
+D -> ES : Request analysis
+ES -> LT : Assign analysis task
+LT -> ES : Update analysis status
+LT -> ES : Upload results
+ES -> D : Notify results ready
+D -> ES : Review analysis
+@enduml

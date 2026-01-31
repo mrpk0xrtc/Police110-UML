@@ -1,0 +1,23 @@
+@startuml
+title Sequence: Dispatch to Patrol
+
+participant Dispatcher as D
+participant "CAD System" as CAD
+participant "MDT System" as MDT
+participant Officer as O
+participant "GPS Tracker" as GPS
+
+D -> CAD : Search available units
+CAD -> D : Return unit list
+D -> CAD : Select unit O
+CAD -> MDT : Send dispatch details
+MDT -> O : Display assignment
+O -> MDT : Accept assignment
+MDT -> CAD : Update unit status
+CAD -> D : Confirm dispatch
+D -> O : Voice confirmation
+O -> GPS : Activate tracking
+GPS -> CAD : Update location
+O -> D : En route notification
+O -> D : Arrival notification
+@enduml

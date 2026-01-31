@@ -1,0 +1,26 @@
+@startuml
+title Sequence: Arrest and Booking
+
+participant Officer as O
+participant Suspect as S
+participant "Transport Unit" as TU
+participant "Jail Officer" as JO
+participant "Booking System" as BS
+participant "Medical Staff" as MS
+
+O -> S : Make arrest
+O -> O : Read Miranda rights
+O -> TU : Request transport
+TU -> O : Arrive for pickup
+O -> TU : Transfer suspect
+TU -> JO : Deliver to jail
+JO -> S : Search suspect
+JO -> BS : Create booking record
+BS -> JO : Return booking number
+JO -> MS : Request medical screening
+MS -> S : Conduct screening
+MS -> JO : Return medical clearance
+JO -> S : Assign cell
+JO -> BS : Complete booking
+BS -> O : Notify arresting officer
+@enduml

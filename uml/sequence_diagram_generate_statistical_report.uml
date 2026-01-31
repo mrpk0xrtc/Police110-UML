@@ -1,0 +1,24 @@
+@startuml
+title Sequence: Generate Statistical Report
+
+actor "Crime Analyst" as CA
+participant "Reporting System" as RS
+participant Database as DB
+participant "GIS System" as GIS
+participant "Chief's Office" as CO
+
+CA -> RS : Request crime statistics
+RS -> CA : Present filter options
+CA -> RS : Select parameters\n(time, area, crime types)
+RS -> DB : Query incident data
+DB -> RS : Return raw data
+RS -> GIS : Request mapping data
+GIS -> RS : Return geographic layers
+RS -> RS : Analyze and compile
+RS -> CA : Display preliminary report
+CA -> RS : Adjust parameters
+RS -> RS : Regenerate report
+RS -> CA : Present final report
+CA -> CO : Submit report
+CO -> CA : Acknowledge receipt
+@enduml

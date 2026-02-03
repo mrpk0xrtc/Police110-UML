@@ -5,7 +5,12 @@ build: *.tex
 	xelatex -output-directory build -shell-escape main.tex
 	xelatex -output-directory build -shell-escape main.tex
 
-gen_diagrams: clean
+partial: *.tex
+	mkdir -p build
+	xelatex -output-directory build -shell-escape main.tex
+
+gen_diagrams:
+	rm -rf images/
 	plantuml --format svg --output-dir images/ uml/*.uml
 	mv uml/images .
 

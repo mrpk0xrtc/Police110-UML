@@ -2,8 +2,7 @@
 class Suspect {
   -- Identification --
   -aliases: List<String>
-  -ssn: String
-  -fbiNumber: String
+  -nationalId: String
   -stateId: String
   -photograph: Image
 
@@ -36,7 +35,6 @@ class Arrest {
   -charges: List<Charge>
   -arrestingOfficer: Officer
   -location: Location
-  +getBailAmount(): double
 }
 
 class Warrant {
@@ -45,7 +43,7 @@ class Warrant {
   -issuedDate: Date
   -expiryDate: Date
   -issuingJudge: String
-  -isActive(): boolean
+  +isActive(): boolean
 }
 
 Suspect "1" -- "*" Arrest : has

@@ -1,19 +1,37 @@
 \section{\lr{Class Diagrams}}
+در این بخش به طراحی کلاس ها می پردازیم. کلاس ها قالب هایی هستند که دارای ویژگی ها و توابعی هستند که میتوانند برای درج و یا حذف ویژگی ها از نمونه ها استفاده شوند و دسته ی دیگر توابع با بخش های دیگر سیستم ارتباط می گیرند.
 \subsection{\lr{Class Diagrams Overview}}
 
 \hspace{1cm}
 
-\begin{latin}\textbf{involvedIn:}\end{latin} یک شخص میتواند در چندین حادثه حضور داشته باشد.
-\begin{latin}\textbf{includes:}\end{latin} یک حادثه میتواند شامل چندین پرونده باشد.
-\begin{latin}\textbf{documentedBy:}\end{latin} یک حادثه میتواند چندین گزارش داشته باشد.
+\par\noindent
+\rl{یک شخص میتواند در چندین حادثه حضور داشته باشد.}
+\hfill
+\lr{\textbf{involvedIn:}}
+\newline
+\rl{یک حادثه میتواند شامل چندین پرونده باشد.}
+\hfill
+\lr{\textbf{includes:}}
+\newline
+\rl{یک حادثه میتواند چندین گزارش داشته باشد.}
+\hfill
+\lr{\textbf{documentedBy:}}
+\newline
 
-\hspace{1cm}
+\vspace{0.5cm}
 
-\begin{center}
-  \begin{tikzpicture}[remember picture]
-  \node[anchor=north west]
-      at (current page.north west) {
-      \includesvg[width=14.5in, height=5in]{images/class_diagrams_overview}
-  };
-  \end{tikzpicture}
-\end{center}
+\begin{wrapfigure}{l}{2.5in}
+  \begin{center}
+    \begin{tikzpicture}[remember picture]
+    \node[anchor=north west]
+        at (current page.north west) {
+        \includesvg[width=14.5in, height=5in]{images/class_diagrams_overview}
+    };
+    \end{tikzpicture}
+  \end{center}
+\end{wrapfigure}
+
+ابتدا یک نمای کلی از اشیاء مورد استفاده در سیستم رسم می کنیم. در ساده ترین حالت چندین نفر و چندین پرونده می توانند درگیر یک حادثه شوند و برای هر حادثه می توان هر تعداد گزارشی تهیه کرد.
+\newline\newline
+
+این یک نمای کلی است و تعداد و نوع ویژگی ها می تواند بسته به نیاز سازمان متغیر باشد. توابع مورد نیاز هر شئ در بخش های بعدی بررسی می شود.

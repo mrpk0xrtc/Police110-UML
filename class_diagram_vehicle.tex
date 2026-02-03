@@ -1,12 +1,36 @@
 \subsection{\lr{Class Diagram - Vehicle}}
 
-\begin{wrapfigure}{l}{1in}
-  \begin{center}
-    \begin{tikzpicture}[remember picture]
-    \node[anchor=north west]
-        at (current page.north west) {
-        \includesvg[width=13in, height=4.5in]{images/class_diagram_vehicle}
-    };
-    \end{tikzpicture}
-  \end{center}
-\end{wrapfigure}
+\hspace{1cm}
+این کلاس برای مدل سازی انواع وسایل نقیله است که در سیستم پلیس ثبت خواهند شد.
+\newline
+
+\begin{center}
+  \begin{tikzpicture}[remember picture]
+  \node[anchor=north west]
+      at (current page.north west) {
+      \includesvg[width=15in, height=6in]{images/class_diagram_vehicle}
+  };
+  \end{tikzpicture}
+\end{center}
+
+\textbf{متدها:}
+\newline
+
+\par\noindent
+\rlap{\rl{تخصیص وسیله به افسر}}
+\hfill
+\llap{\lr{\textbf{assignToOfficer(officer):}}}
+\newline
+\rlap{\rl{بروزرسانی وضعیت وسیله}}
+\hfill
+\llap{\lr{\textbf{updateStatus(newStatus):}}}
+\newline
+\rlap{\rl{افزودن گزارش تعمیرات}}
+\hfill
+\llap{\lr{\textbf{logMaintenance(service):}}}
+\newline
+\rlap{\rl{پیگیری وضعیت دردسترس بودن}}
+\hfill
+\llap{\lr{\textbf{isAvailable():}}}
+\newline
+

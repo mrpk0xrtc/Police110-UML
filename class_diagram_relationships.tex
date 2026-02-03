@@ -1,34 +1,81 @@
 \subsection{\lr{Class Diagram - Relationships}}
-\subsubsection{\lr{Person, Incident, Report}}
-
-\begin{latin}\textbf{Person:}\end{latin} s
-
-\begin{wrapfigure}{l}{2in}
-  \begin{center}
-    \begin{tikzpicture}[remember picture]
-    \node[anchor=north west]
-        at (current page.north west) {
-        \includesvg[width=13in, height=4.5in]{images/class_relationships_person}
-    };
-    \end{tikzpicture}
-  \end{center}
-\end{wrapfigure}
 
 \hspace{1cm}
+در این بخش به توضیح روابط میان کلاس ها و نوع روابط آنها می پردازیم.
+\newline
+
+\subsubsection{\lr{Person, Incident, Report}}
+
+\begin{center}
+  \begin{tikzpicture}[remember picture]
+  \node[anchor=north west]
+      at (current page.north west) {
+      \includesvg[width=13in, height=4.5in]{images/class_relationships_person}
+  };
+  \end{tikzpicture}
+\end{center}
+
+\hspace{1cm}
+
+\par\noindent
+\rl{چندین شخص می توانند در چندین حادثه حضور داشته باشند.}
+\hfill
+\lr{\textbf{involvedIn:}}
+\newline
+\rl{یک حادثه می تواند هیچ یا چند متهم داشته باشد.}
+\hfill
+\lr{\textbf{suspectedIn:}}
+\newline
+\rl{یک حادثه می تواند هیچ یا چند قربانی داشته باشد.}
+\hfill
+\lr{\textbf{victimOf:}}
+\newline
+\rl{هر حادثه می میتواند هیچ یا چند شاهد داشته باشد.}
+\hfill
+\lr{\textbf{witnesses:}}
+\newline
+\rl{یک افسر می تواند هر تعداد گزارش بنویسد.}
+\hfill
+\lr{\textbf{authors:}}
+\newline
+\rl{یک حادثه به وسیله یک یا چند گزارش توصیف می شود.}
+\hfill
+\lr{\textbf{documentedBy:}}
+\newline
 
 \pagebreak
 
 \subsubsection{\lr{Case}}
 
-\begin{wrapfigure}{l}{2in}
-  \begin{center}
-    \begin{tikzpicture}[remember picture]
-    \node[anchor=north west]
-        at (current page.north west) {
-        \includesvg[width=13in, height=4.5in]{images/class_relationships_case}
-    };
-    \end{tikzpicture}
-  \end{center}
-\end{wrapfigure}
+\begin{center}
+  \begin{tikzpicture}[remember picture]
+  \node[anchor=north west]
+      at (current page.north west) {
+      \includesvg[width=6in, height=4in]{images/class_relationships_case}
+  };
+  \end{tikzpicture}
+\end{center}
 
 \hspace{1cm}
+
+\par\noindent
+\rl{هر پرونده شامل هیچ یا چند مدرک است.}
+\hfill
+\lr{\textbf{contains:}}
+\newline
+\rl{هر پرونده شامل یک یا چند گزارش است.}
+\hfill
+\lr{\textbf{includes:}}
+\newline
+\rl{هر پرونده شامل یک یا چند حادثه است.}
+\hfill
+\lr{\textbf{comprises:}}
+\newline
+\rl{هر پرونده شامل هیچ یا چند متهم است.}
+\hfill
+\lr{\textbf{involves:}}
+\newline
+\rl{هر پرونده دارای هیچ یا چند شاهد است.}
+\hfill
+\lr{\textbf{refrences:}}
+\newline

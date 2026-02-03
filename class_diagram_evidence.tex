@@ -1,14 +1,45 @@
 \subsection{\lr{Class Diagram - Evidence}}
 
 \hspace{1cm}
-کلاس Evidence.
-\hspace{1cm}
+این کلاس برای مدل سازی مدارک و وضعیت مدارک استفاده می شود. مدارک برای تایید به کارشناسان ارسال می شود و به آنها در دادگاه رسیدگی می شود. هر مدرک می تواند از شخصی به شخص دیگر منتقل شود که به هر مرحله حلقه ی امانت گفته می شود. برای حفظ پیوستگی مدارک, زنجیره ی امانات توسط دادگاه رسیدگی می شود.
+\newline
+
+\par\noindent
+\rl{هر زنجیره ی امانت دارای چندین حلقه ی امانت است.}
+\hfill
+\lr{\textbf{has:}}
+\newline
 
 \begin{center}
   \begin{tikzpicture}[remember picture]
   \node[anchor=north west]
       at (current page.north west) {
-      \includesvg[width=14in, height=5in]{images/class_diagram_evidence}
+      \includesvg[width=13in, height=5in]{images/class_diagram_evidence}
   };
   \end{tikzpicture}
 \end{center}
+
+\textbf{متدها:}
+\newline
+
+\par\noindent
+\rlap{\rl{افزودن حلقه ی امانت}}
+\hfill
+\llap{\lr{\textbf{addCustodyEntry(entry):}}}
+\newline
+\rlap{\rl{درخواست انتقال به شخص دیگر}}
+\hfill
+\llap{\lr{\textbf{transferTo(newHolder):}}}
+\newline
+\rlap{\rl{درخواست بررسی مدارک}}
+\hfill
+\llap{\lr{\textbf{requestAnalysis(lab, tests):}}}
+\newline
+\rlap{\rl{بروزرسانی وضعیت رسیدگی}}
+\hfill
+\llap{\lr{\textbf{updateDisposition(disposition):}}}
+\newline
+\rlap{\rl{دریافت زنجیره ی امانات}}
+\hfill
+\llap{\lr{\textbf{getCustodyHistory():}}}
+\newline

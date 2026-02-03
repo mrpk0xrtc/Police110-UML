@@ -4,6 +4,7 @@ class Person {
   #id: String
   #name: String
   #dateOfBirth: Date
+  #nationalID: String
   #address: String
   #contactInfo: String
 
@@ -39,7 +40,7 @@ class Suspect {
 
   -- Methods --
   +getCriminalRecord(): List<Record>
-  +addArrest(arrest: Arrest): void
+  +addArrestRecord(arrest: Arrest): void
   +isWanted(): boolean
 }
 

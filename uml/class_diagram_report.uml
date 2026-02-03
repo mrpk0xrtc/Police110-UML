@@ -25,7 +25,6 @@ class Report {
   +isConfidential: boolean
 
   -- Methods --
-  +addSection(section: ReportSection): void
   +addAttachment(file: File): void
   +submitForReview(): void
   +approve(approver: Officer): void

@@ -1,14 +1,45 @@
 \subsection{\lr{Class Diagram - Report}}
 
 \hspace{1cm}
-کلاس Report.
-\hspace{1cm}
+این کلاس برای مدل سازی فرآیند تهیه گزارش از حوادث و شواهد است, که باید قابلیت گنجاندن انواع داده را داشته باشد.
+\vspace{1cm}
 
-\begin{center}
-  \begin{tikzpicture}[remember picture]
-  \node[anchor=north west]
-      at (current page.north west) {
-      \includesvg[width=14in, height=5in]{images/class_diagram_report}
-  };
-  \end{tikzpicture}
-\end{center}
+\begin{wrapfigure}{l}{2in}
+  \begin{center}
+    \begin{tikzpicture}[remember picture]
+    \node[anchor=north west]
+        at (current page.north west) {
+        \includesvg[width=15in, height=5in]{images/class_diagram_report}
+    };
+    \end{tikzpicture}
+  \end{center}
+\end{wrapfigure}
+
+\textbf{متدها:}
+\newline
+
+\par\noindent
+\rlap{\rl{افزودن پیوست}}
+\hfill
+\llap{\lr{\textbf{addAttachment(file):}}}
+\newline
+\rlap{\rl{ارسال برای بازبینی بیشتر}}
+\hfill
+\llap{\lr{\textbf{submitForReview():}}}
+\newline
+\rlap{\rl{پذیرش گزارش توسط افسر بالامقام}}
+\hfill
+\llap{\lr{\textbf{approve(approver):}}}
+\newline
+\rlap{\rl{رد گزارش و دلیل آن}}
+\hfill
+\llap{\lr{\textbf{reject(reason):}}}
+\newline
+\rlap{\rl{تولید فایل PDF از گزارش}}
+\hfill
+\llap{\lr{\textbf{generatePDF():}}}
+\newline
+\rlap{\rl{جست و جوی متن گزارش}}
+\hfill
+\llap{\lr{\textbf{searchContent(keyword):}}}
+\newline

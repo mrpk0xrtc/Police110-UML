@@ -33,10 +33,7 @@ class Vehicle {
   +assignToOfficer(officer: Officer): void
   +updateStatus(newStatus: VehicleStatus): void
   +logMaintenance(service: Maintenance): void
-  +checkFuel(): double
   +isAvailable(): boolean
-  +activateEmergencyLights(): void
-  +deactivateEmergencyLights(): void
 }
 
 enum VehicleType {

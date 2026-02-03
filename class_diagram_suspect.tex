@@ -1,17 +1,53 @@
 \subsection{\lr{Class Diagram - Suspect}}
 
 \hspace{1cm}
+این یک کلاس برای مدل سازی متهمان است که می تواند با کلاس بازداشت و دستور تحت تعقیب مرتبط باشد.
+\newline
 
-\begin{latin}\textbf{has:}\end{latin} چندین اقدام به دستگیری برای یک مجرم میتواند وجود داشته باشد.
-\begin{latin}\textbf{subjectOf:}\end{latin} چندین اعلامیه تحت تعقیب میتواند برای یک مجرم صادر شود.
+\par\noindent
+\rl{چندین اقدام به دستگیری برای یک مجرم میتواند وجود داشته باشد.}
+\hfill
+\lr{\textbf{has:}}
+\newline
+\rl{چندین اعلامیه تحت تعقیب میتواند برای یک مجرم صادر شود.}
+\hfill
+\lr{\textbf{subjectOf:}}
+\newline
 
-\hspace{2cm}
+\hspace{1cm}
 
-\begin{center}
-  \begin{tikzpicture}[remember picture]
-  \node[anchor=north west]
-      at (current page.north west) {
-      \includesvg[width=14in, height=6in]{images/class_diagram_suspect}
-  };
-  \end{tikzpicture}
-\end{center}
+\begin{wrapfigure}{l}{2in}
+  \begin{center}
+    \begin{tikzpicture}[remember picture]
+    \node[anchor=north west]
+        at (current page.north west) {
+        \includesvg[width=12in, height=5in]{images/class_diagram_suspect}
+    };
+    \end{tikzpicture}
+  \end{center}
+\end{wrapfigure}
+
+\textbf{متدها:}
+\newline
+
+\par\noindent
+\rl{آیا متهم تحت تعقیب است؟}
+\hfill
+\lr{\textbf{isWanted():}}
+\newline
+\rlap{\rl{دریافت حکم فعال}}
+\hfill
+\llap{\lr{\textbf{getActiveWarrants():}}}
+\newline
+\rlap{\rl{افزودن سابقه ی کیفری}}
+\hfill
+\llap{\lr{\textbf{addArrestRecord(arrest):}}}
+\newline
+\rlap{\rl{افزودن نام مستعار}}
+\hfill
+\llap{\lr{\textbf{addAlias(alias):}}}
+\newline
+\rl{دریافت شاخص خطرناک بودن مجرم}
+\hfill
+\lr{\textbf{getRiskLevel():}}
+\newline

@@ -1,14 +1,45 @@
 \subsection{\lr{Class Diagram - Incident}}
 
 \hspace{1cm}
-کلاس Incident برای درج اطلاعات حوادث تعریف میشود.
+این کلاس برای مدل سازی حوادث به کار می رود. در اینجا انواع کلی حوادث و سطوح اولویت را تعریف می کنیم.
 \vspace{1cm}
 
-\begin{center}
-  \begin{tikzpicture}[remember picture]
-  \node[anchor=north west]
-      at (current page.north west) {
-      \includesvg[width=14in, height=6in]{images/class_diagram_incident}
-  };
-  \end{tikzpicture}
-\end{center}
+\begin{wrapfigure}{l}{2in}
+  \begin{center}
+    \begin{tikzpicture}[remember picture]
+    \node[anchor=north west]
+        at (current page.north west) {
+        \includesvg[width=14in, height=6in]{images/class_diagram_incident}
+    };
+    \end{tikzpicture}
+  \end{center}
+\end{wrapfigure}
+
+\textbf{متدها:}
+\newline
+
+\par\noindent
+\rlap{\rl{تخصیص یک واحد به حادثه}}
+\hfill
+\llap{\lr{\textbf{assignUnit(unit):}}}
+\newline
+\rlap{\rl{بروزرسانی وضعیت}}
+\hfill
+\llap{\lr{\textbf{updateStatus(newStatus):}}}
+\newline
+\rlap{\rl{افزودن متن شواهد}}
+\hfill
+\llap{\lr{\textbf{addNarrative(text):}}}
+\newline
+\rlap{\rl{محاسبه ی زمان پاسخ}}
+\hfill
+\llap{\lr{\textbf{calculateResponseTime():}}}
+\newline
+\rlap{\rl{آیا حادثه در جریان است؟}}
+\hfill
+\llap{\lr{\textbf{isActive():}}}
+\newline
+\rlap{\rl{خاتمه ی حادثه}}
+\hfill
+\llap{\lr{\textbf{closeIncident():}}}
+\newline

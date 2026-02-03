@@ -1,12 +1,52 @@
 \subsection{\lr{Class Diagram - Dispatch System}}
 
-\begin{wrapfigure}{l}{1in}
+\hspace{1cm}
+در این بخش به توضیح فرآیند اعزام نیرو ها به ماموریت ها و حوادث مختلف می پردازیم.
+\newline
+
+\begin{wrapfigure}{l}{1.2in}
   \begin{center}
     \begin{tikzpicture}[remember picture]
     \node[anchor=north west]
         at (current page.north west) {
-        \includesvg[width=13in, height=4.5in]{images/class_diagram_dispatch_system}
+        \includesvg[width=15in, height=6in]{images/class_diagram_dispatch_system}
     };
     \end{tikzpicture}
   \end{center}
 \end{wrapfigure}
+
+\hspace{1cm}
+
+\par\noindent
+\rlap{\rl{یک ماموریت اعزام می تواند چندین تماس اضطراری دریافت کند.}}
+\hfill
+\llap{\lr{\textbf{processes:}}}
+\newline
+\rlap{\rl{یک ماموریت اعزام می تواند مربوط به چندین حادثه باشد.}}
+\hfill
+\llap{\lr{\textbf{creates:}}}
+\newline
+\rlap{\rl{یک ماموریت اعزام می تواند شامل چندین واحد باشد.}}
+\hfill
+\llap{\lr{\textbf{manages:}}}
+\newline
+\rlap{\rl{هر تماس اضطراری فقط مربوط به یک حادثه است.}}
+\hfill
+\llap{\lr{\textbf{generates:}}}
+\newline
+\rlap{\rl{یک حادثه می تواند به چندین واحد سپرده شود.}}
+\hfill
+\llap{\lr{\textbf{assignedTo:}}}
+\newline
+\rlap{\rl{هر واحد از یک یا چند افسر تشکیل می شود.}}
+\hfill
+\llap{\lr{\textbf{consistsOf:}}}
+\newline
+\rlap{\rl{به هر واحد یک وسیله نقلیه تعلق می گیرد.}}
+\hfill
+\llap{\lr{\textbf{includes:}}}
+\newline
+\rlap{\rl{به هر افسر فقط یک وسیله می تواند تعلق گیرد.}}
+\hfill
+\llap{\lr{\textbf{assignedTo:}}}
+\newline

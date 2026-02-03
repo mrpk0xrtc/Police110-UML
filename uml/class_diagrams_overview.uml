@@ -4,6 +4,7 @@ title Core Classes Overview
 class Person <<Entity>> {
   +id: String
   +name: String
+  +nationalId: String
   +dateOfBirth: Date
   +address: String
   +contactInfo: String

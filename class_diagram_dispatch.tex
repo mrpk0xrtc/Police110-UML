@@ -1,12 +1,55 @@
 \subsection{\lr{Class Diagram - Dispatch}}
 
-\begin{wrapfigure}{l}{1in}
-  \begin{center}
-    \begin{tikzpicture}[remember picture]
-    \node[anchor=north west]
-        at (current page.north west) {
-        \includesvg[width=13in, height=4.5in]{images/class_diagram_dispatch}
-    };
-    \end{tikzpicture}
-  \end{center}
-\end{wrapfigure}
+\hspace{1cm}
+این کلاس برای مدل سازی مرحله اعزام به کار می رود. اعزام می تواند از طریق یک دستور یا در پاسخ به یک تماس اضطراری آغاز شود.
+\hspace{1cm}
+
+\begin{center}
+  \begin{tikzpicture}[remember picture]
+  \node[anchor=north west]
+      at (current page.north west) {
+      \includesvg[width=13in, height=4.5in]{images/class_diagram_dispatch}
+  };
+  \end{tikzpicture}
+\end{center}
+
+\textbf{متدها:}
+\newline
+
+\par\noindent
+\rlap{\rl{دریافت تماس اضطراری}}
+\hfill
+\llap{\lr{\textbf{receiveCall(callerInfo, emergency):}}}
+\newline
+\rlap{\rl{درج اطلاعات حادثه}}
+\hfill
+\llap{\lr{\textbf{createIncident(call):}}}
+\newline
+\rlap{\rl{تخصیص واحد به یک حادثه}}
+\hfill
+\llap{\lr{\textbf{assignUnit(incident, unit):}}}
+\newline
+\rlap{\rl{اعزام نیرو}}
+\hfill
+\llap{\lr{\textbf{dispatchUnit(assignment):}}}
+\newline
+\rlap{\rl{پایش وضعیت نیرو ها}}
+\hfill
+\llap{\lr{\textbf{monitorUnitStatus(unit):}}}
+\newline
+\rlap{\rl{بروزرسانی وضعیت حادثه}}
+\hfill
+\llap{\lr{\textbf{updateIncidentStatus(incident, status):}}}
+\newline
+\rlap{\rl{درخواست نیروی پشتیبانی}}
+\hfill
+\llap{\lr{\textbf{requestAdditionalUnits(incident, unitsNeeded):}}}
+\newline
+\rlap{\rl{پخش بیانیه اعلام خطر}}
+\hfill
+\llap{\lr{\textbf{broadcastAlert(alert):}}}
+\newline
+\rlap{\rl{پایش ارتباطات نیرو ها}}
+\hfill
+\llap{\lr{\textbf{logCommunication(communication):}}}
+\newline

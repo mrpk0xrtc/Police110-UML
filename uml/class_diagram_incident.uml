@@ -33,6 +33,14 @@ class Incident {
   +closeIncident(): void
 }
 
+enum Priority {
+  EMERGENCY
+  HIGH
+  MEDIUM
+  LOW
+  INFORMATION
+}
+
 enum IncidentType {
   TRAFFIC_ACCIDENT
   BURGLARY
@@ -46,11 +54,4 @@ enum IncidentType {
   OTHER
 }
 
-enum Priority {
-  EMERGENCY
-  HIGH
-  MEDIUM
-  LOW
-  INFORMATION
-}
 @enduml

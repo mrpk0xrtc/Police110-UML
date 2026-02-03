@@ -1,12 +1,34 @@
 \subsection{\lr{Class Diagram - Equipment Tracking}}
 
-\begin{wrapfigure}{l}{1in}
-  \begin{center}
-    \begin{tikzpicture}[remember picture]
-    \node[anchor=north west]
-        at (current page.north west) {
-        \includesvg[width=13in, height=4.5in]{images/class_diagram_equipment_tracking}
-    };
-    \end{tikzpicture}
-  \end{center}
-\end{wrapfigure}
+\hspace{1cm}
+در این بخش به توضیح فرآیند تخصیص تجهیزات از پایگاه به افسران می پردازیم.
+\newline
+
+\begin{center}
+  \begin{tikzpicture}[remember picture]
+  \node[anchor=north west]
+      at (current page.north west) {
+      \includesvg[width=10in, height=3.5in]{images/class_diagram_equipment_tracking}
+  };
+  \end{tikzpicture}
+\end{center}
+
+\hspace{1cm}
+
+\par\noindent
+\rlap{\rl{رئیس پایگاه می تواند تمام تجهیزات را مدیریت کند.}}
+\hfill
+\llap{\lr{\textbf{manages:}}}
+\newline
+\rlap{\rl{هر پایگاه می تواند چندین تجهیزات را انبار کند.}}
+\hfill
+\llap{\lr{\textbf{stores:}}}
+\newline
+\rlap{\rl{به هر افسر چندین تجهیزات تخصیص داده می شود.}}
+\hfill
+\llap{\lr{\textbf{assignedTo:}}}
+\newline
+\rlap{\rl{هر افسر می تواند چند تجهیزات را تحویل دهد.}}
+\hfill
+\llap{\lr{\textbf{checkedOutTo:}}}
+\newline

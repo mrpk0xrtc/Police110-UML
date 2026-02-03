@@ -1,7 +1,7 @@
 \subsection{\lr{Class Diagram - Officer}}
 
 \hspace{1cm}
-کلاس Officer مدلی از اطلاعات مورد نیاز از پرسنل سازمان است.
+این کلاس برای مدل سازی افسران به کار می رود. این اطلاعات شامل اطلاعات پایه هویتی, سمت در سیستم پلیس, سوابق درمانی, سوابق تعلیق و تجهیزات تخصیص یافته است.
 \hspace{1cm}
 
 \begin{center}
@@ -12,3 +12,33 @@
   };
   \end{tikzpicture}
 \end{center}
+
+\vspace{0.5cm}
+\textbf{متدها:}
+\newline
+
+\par\noindent
+\rl{تخصیص افسر به گشت یک منطقه.}
+\hfill
+\lr{\textbf{assignToPatrol(area):}}
+\newline
+\rl{پاسخ به یک حادثه}
+\hfill
+\lr{\textbf{respondToIncident(incident):}}
+\newline
+\rl{بازداشت متهم}
+\hfill
+\lr{\textbf{arrest(suspect):}}
+\newline
+\rl{تولید گزارش برای یک حادثه}
+\hfill
+\lr{\textbf{generateReport(incident):}}
+\newline
+\rl{درخواست نیروی پشتیبانی}
+\hfill
+\lr{\textbf{requestBackup():}}
+\newline
+\rl{تغییر وضعیت افسر}
+\hfill
+\lr{\textbf{updateStatus(newStatus):}}
+\newline

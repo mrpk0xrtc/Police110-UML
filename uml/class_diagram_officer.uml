@@ -23,11 +23,10 @@ class Officer {
   -bodyCameraId: String
 
   -- Methods --
-  +patrol(zone: Zone): void
+  +assignToPatrol(area: Zone): void
   +respondToIncident(incident: Incident): Response
   +arrest(suspect: Suspect): ArrestRecord
-  +issueCitation(violation: Violation): Citation
-  +fileReport(incident: Incident): Report
+  +generateReport(incident: Incident): Report
   +requestBackup(): void
   +updateStatus(newStatus: OfficerStatus): void
 }

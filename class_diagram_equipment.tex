@@ -1,12 +1,65 @@
 \subsection{\lr{Class Diagram - Equipment}}
 
-\begin{wrapfigure}{l}{1in}
-  \begin{center}
-    \begin{tikzpicture}[remember picture]
-    \node[anchor=north west]
-        at (current page.north west) {
-        \includesvg[width=13in, height=4.5in]{images/class_diagram_equipment}
-    };
-    \end{tikzpicture}
-  \end{center}
-\end{wrapfigure}
+\hspace{1cm}
+این کلاس برای مدل سازی انواع تجهیزات مورد استفاده افسران به کار خواهد رفت. باید بتوان انواع تجهیزات و وضعیت آنها را در سیستم ثبت کرد.
+\newline
+
+\par\noindent
+\rl{یک وسیله می تواند به یک یا هیچ افسری تعلق گیرد.}
+\hfill
+\lr{\textbf{checkedOutTo:}}
+\newline
+\rl{یک وسیله می تواند فقط به یک پایگاه تعلق گیرد.}
+\hfill
+\lr{\textbf{assignedTo:}}
+\newline
+
+\begin{center}
+  \begin{tikzpicture}[remember picture]
+  \node[anchor=north west]
+      at (current page.north west) {
+      \includesvg[width=13in, height=4.5in]{images/class_diagram_equipment}
+  };
+  \end{tikzpicture}
+\end{center}
+
+\textbf{متدها:}
+\newline
+
+\par\noindent
+\rl{دریافت شناسه ی وسیله}
+\hfill
+\lr{\textbf{getEquipmentID():}}
+\newline
+\rl{دریافت نوع وسیله}
+\hfill
+\lr{\textbf{getType():}}
+\newline
+\rl{دریافت متصدی وسیله}
+\hfill
+\lr{\textbf{getCheckedOutTo():}}
+\newline
+\rl{اختصاص وسیله به یک افسر}
+\hfill
+\lr{\textbf{checkOut(officer):}}
+\newline
+\rl{تحویل گرفتن وسیله از یک افسر}
+\hfill
+\lr{\textbf{checkIn():}}
+\newline
+\rl{بروزرسانی وضعیت وسیله}
+\hfill
+\lr{\textbf{updateStatus(status):}}
+\newline
+\rl{پیگیری وضعیت وسیله}
+\hfill
+\lr{\textbf{isAvailable():}}
+\newline
+\rl{تعیین زمان تعمیرات}
+\hfill
+\lr{\textbf{scheduleMaintenance(date):}}
+\newline
+\rl{بروزرسانی مکان نگهداری وسیله}
+\hfill
+\lr{\textbf{updateLocation(location):}}
+\newline

@@ -1,7 +1,7 @@
 \subsection{\lr{Class Diagram - Person}}
 
 \hspace{1cm}
-کلاس Person یک مادر برای انواع افرادی است که در سیستم ثبت خواهند شد.
+این کلاس یک کلاس مادر برای تمام نفرات از جمله افسران, مجرمان, متهمان و شاهدان است که درون سیستم ثبت خواهند شد.
 \hspace{1cm}
 
 \begin{center}
@@ -12,3 +12,68 @@
   };
   \end{tikzpicture}
 \end{center}
+
+\pagebreak
+
+\textbf{متدها:}
+\newline
+
+\begin{latin}\textbf{Class Person:}\newline\end{latin}
+\par\noindent
+\rl{دریافت شناسه منحصر به فرد شخص که درون سیستم کارایی دارد.}
+\hfill
+\lr{\textbf{getId():}}
+\newline
+\rl{دریافت نام شخص}
+\hfill
+\lr{\textbf{getName():}}
+\newline
+\rl{دریافت سن شخص}
+\hfill
+\lr{\textbf{getAge():}}
+\newline
+\rl{تصحیح اطلاعات شناسایی و تماس شخص}
+\hfill
+\lr{\textbf{updateContactInfo():}}
+\newline
+\rl{احراز هویت شخص}
+\hfill
+\lr{\textbf{validateIdentity():}}
+\newline
+
+\vspace{0.5cm}
+
+\begin{latin}\textbf{Class Officer:}\newline\end{latin}
+\begin{latin}\par\noindent\textbf{getBadgeNumber():}\end{latin}
+\par\noindent
+کد مختص افسر که برای تایید هویت افسران استفاده می شود را خروجی می دهد.
+\newline
+\rl{درجه ی نظامی افسر را خروجی می دهد.}
+\hfill
+\lr{\textbf{getRank():}}
+\newline
+\rl{افسر را به گشت یک ناحیه اضافه می کند.}
+\hfill
+\lr{\textbf{assignToPatrol(area):}}
+\newline
+\rl{یک گزارش تولید می کند.}
+\hfill
+\lr{\textbf{generateReport():}}
+\newline
+
+\vspace{0.5cm}
+
+\begin{latin}\textbf{Class Suspect:}\newline\end{latin}
+\par\noindent
+\rl{دریافت لیست سابقه کیفری متهم}
+\hfill
+\lr{\textbf{getCriminalRecord():}}
+\newline
+\rl{اضافه کردن به سابقه کیفری متهم}
+\hfill
+\lr{\textbf{addArrestRecord(arrest):}}
+\newline
+\rl{دریافت وضعیت تحت تعقیبی متهم}
+\hfill
+\lr{\textbf{isWanted():}}
+\newline

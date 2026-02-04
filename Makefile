@@ -14,6 +14,10 @@ gen_diagrams:
 	plantuml --charset UTF-8 --format svg --output-dir images/ uml/*.uml
 	mv uml/images .
 
+gen_logo:
+	mkdir -p build
+	magick logo.png -alpha set -channel A -evaluate multiply 0.1 +channel build/logo.png
+
 clean:
 	rm -rf build/
 	rm -rf images/

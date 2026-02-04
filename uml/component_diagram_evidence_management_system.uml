@@ -14,10 +14,4 @@ ST --> LI : lab requests
 LI --> CC : analysis results
 CC --> DM : release orders
 AM --> all : audits all
-
-note right
-  Tracks evidence from collection
-  to disposition with complete
-  chain of custody records
-end note
 @enduml

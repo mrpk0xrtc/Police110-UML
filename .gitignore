@@ -333,3 +333,6 @@ config.tex
 
 # UML Images
 images/
+
+# Logo
+logo.png

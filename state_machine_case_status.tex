@@ -1,12 +1,56 @@
 \subsection{\lr{State Machine Diagram - Case Status}}
 
-\begin{wrapfigure}{l}{1in}
+\hspace{1cm}
+انواع وضعیت برای کلاس پرونده ها
+\newline
+
+\begin{wrapfigure}{l}{1.5in}
   \begin{center}
     \begin{tikzpicture}[remember picture]
     \node[anchor=north west]
         at (current page.north west) {
-        \includesvg[width=13in, height=4.5in]{images/state_machine_case_status}
+        \includesvg[width=14in, height=5in]{images/state_machine_case_status}
     };
     \end{tikzpicture}
   \end{center}
 \end{wrapfigure}
+
+\hspace{1cm}
+
+\par\noindent
+\rlap{\rl{باز}}
+\hfill
+\llap{\lr{\textbf{Open:}}}
+\newline
+\rlap{\rl{غیرفعال}}
+\hfill
+\llap{\lr{\textbf{Inactive:}}}
+\newline
+\rlap{\rl{سرد (غیرفعال به مدت طولانی)}}
+\hfill
+\llap{\lr{\textbf{Cold:}}}
+\newline
+\rlap{\rl{در حال تحقیقات}}
+\hfill
+\llap{\lr{\textbf{UnderInvestigation:}}}
+\newline
+\rlap{\rl{متهم شناسایی شد}}
+\hfill
+\llap{\lr{\textbf{SuspectIdentified:}}}
+\newline
+\rlap{\rl{متهم بازداشت شد}}
+\hfill
+\llap{\lr{\textbf{ArrestMade:}}}
+\newline
+\rlap{\rl{تحت پیگرد قانونی}}
+\hfill
+\llap{\lr{\textbf{Prosecuted:}}}
+\newline
+\rlap{\rl{محکوم}}
+\hfill
+\llap{\lr{\textbf{Convicted:}}}
+\newline
+\rlap{\rl{بسته شده}}
+\hfill
+\llap{\lr{\textbf{Closed:}}}
+\newline

@@ -1,12 +1,50 @@
 \subsection{\lr{State Machine Diagram - Vehicle Status}}
 
-\begin{wrapfigure}{l}{1in}
-  \begin{center}
-    \begin{tikzpicture}[remember picture]
-    \node[anchor=north west]
-        at (current page.north west) {
-        \includesvg[width=13in, height=4.5in]{images/state_machine_vehicle_status}
-    };
-    \end{tikzpicture}
-  \end{center}
-\end{wrapfigure}
+\hspace{1cm}
+انواع وضعیت برای کلاس ماشین
+\newline
+
+\begin{center}
+  \begin{tikzpicture}[remember picture]
+  \node[anchor=north west]
+      at (current page.north west) {
+      \includesvg[width=12in, height=4in]{images/state_machine_vehicle_status}
+  };
+  \end{tikzpicture}
+\end{center}
+
+\hspace{1cm}
+
+\par\noindent
+\rlap{\rl{در حال سرویس}}
+\hfill
+\llap{\lr{\textbf{Maintenance:}}}
+\newline
+\rlap{\rl{دردسترس}}
+\hfill
+\llap{\lr{\textbf{Available:}}}
+\newline
+\rlap{\rl{رزرو شده}}
+\hfill
+\llap{\lr{\textbf{Reserved:}}}
+\newline
+\rlap{\rl{تخصیص یافته}}
+\hfill
+\llap{\lr{\textbf{Assigned:}}}
+\newline
+\rlap{\rl{در حال استفاده}}
+\hfill
+\llap{\lr{\textbf{InUse:}}}
+\newline
+\rlap{\rl{غیرقابل استفاده}}
+\hfill
+\llap{\lr{\textbf{OutOfService:}}}
+\newline
+\rlap{\rl{بازنشسته}}
+\hfill
+\llap{\lr{\textbf{Retired:}}}
+\newline
+\rlap{\rl{در حال تعمیر}}
+\hfill
+\llap{\lr{\textbf{Repair:}}}
+\newline

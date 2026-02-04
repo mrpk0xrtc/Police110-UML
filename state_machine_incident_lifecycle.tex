@@ -1,13 +1,98 @@
 \section{\lr{State Machine Diagrams}}
+
+\hspace{1cm}
+در این سرفصل به بررسی انواع وضعیت های مختلف برای کلاس های مختلفی که تعریف کرده ایم, می پردازیم.
+\newline
+
 \subsection{\lr{State Machine Diagram - Incident Lifecycle}}
 
-\begin{wrapfigure}{l}{1in}
+\hspace{1cm}
+انواع وضعیت برای کلاس حادثه
+\newline
+
+\begin{wrapfigure}{l}{1.5in}
   \begin{center}
     \begin{tikzpicture}[remember picture]
     \node[anchor=north west]
         at (current page.north west) {
-        \includesvg[width=13in, height=4.5in]{images/state_machine_incident_lifecycle}
+        \includesvg[width=14in, height=6in]{images/state_machine_incident_lifecycle}
     };
     \end{tikzpicture}
   \end{center}
 \end{wrapfigure}
+
+\hspace{1cm}
+
+\par\noindent
+\rlap{\rl{گزارش شده}}
+\hfill
+\llap{\lr{\textbf{Reported:}}}
+\newline
+\rlap{\rl{تایید شده}}
+\hfill
+\llap{\lr{\textbf{Verified:}}}
+\newline
+\rlap{\rl{اعزام شده}}
+\hfill
+\llap{\lr{\textbf{Dispatched:}}}
+\newline
+\rlap{\rl{در حال پاسخ}}
+\hfill
+\llap{\lr{\textbf{Responding:}}}
+\newline
+\rlap{\rl{حل شده}}
+\hfill
+\llap{\lr{\textbf{Resolved:}}}
+\newline
+\rlap{\rl{پرونده سازی}}
+\hfill
+\llap{\lr{\textbf{Case Generated:}}}
+\newline
+\rlap{\rl{در حال مستند سازی}}
+\hfill
+\llap{\lr{\textbf{Documenting:}}}
+\newline
+\rlap{\rl{بسته شده}}
+\hfill
+\llap{\lr{\textbf{Closed:}}}
+\newline
+
+\vspace{1cm}
+
+\par\noindent
+\rlap{\rl{تایید جزئیات}}
+\hfill
+\llap{\lr{\textbf{Validate details:}}}
+\newline
+\rlap{\rl{واحد های اعزام شده}}
+\hfill
+\llap{\lr{\textbf{Units assigned:}}}
+\newline
+\rlap{\rl{واحد های درگیر}}
+\hfill
+\llap{\lr{\textbf{Units responding:}}}
+\newline
+\rlap{\rl{بررسی صحنه جرم}}
+\hfill
+\llap{\lr{\textbf{Scene processing:}}}
+\newline
+\rlap{\rl{راه حل فوری}}
+\hfill
+\llap{\lr{\textbf{Immediate resolution:}}}
+\newline
+\rlap{\rl{نوشتن گزارش}}
+\hfill
+\llap{\lr{\textbf{Report writing:}}}
+\newline
+\rlap{\rl{نیاز به بررسی}}
+\hfill
+\llap{\lr{\textbf{Requires follow-up:}}}
+\newline
+\rlap{\rl{تمام گزارش ها تایید شدند}}
+\hfill
+\llap{\lr{\textbf{All reports filed:}}}
+\newline
+\rlap{\rl{ساخت پرونده جدید}}
+\hfill
+\llap{\lr{\textbf{New case created:}}}
+\newline

@@ -9,7 +9,7 @@ component "Dispatch System" {
   component "Alert System" as AS
 }
 
-CT --> N911 : receives calls
+CT --> N110 : receives calls
 DC --> RC : transmits to units
 DC --> AS : sends alerts
 CT --> DC : transfers calls

@@ -1,12 +1,60 @@
 \subsection{\lr{State Machine Diagram - Officer Status}}
 
-\begin{wrapfigure}{l}{1in}
+\hspace{1cm}
+انواع وضعیت برای کلاس افسر
+\newline
+
+\begin{wrapfigure}{l}{1.5in}
   \begin{center}
     \begin{tikzpicture}[remember picture]
     \node[anchor=north west]
         at (current page.north west) {
-        \includesvg[width=13in, height=4.5in]{images/state_machine_officer_status}
+        \includesvg[width=13in, height=5in]{images/state_machine_officer_status}
     };
     \end{tikzpicture}
   \end{center}
 \end{wrapfigure}
+
+\hspace{1cm}
+
+\par\noindent
+\rlap{\rl{مرخص}}
+\hfill
+\llap{\lr{\textbf{OffDuty:}}}
+\newline
+\rlap{\rl{در حال انجام وظیفه}}
+\hfill
+\llap{\lr{\textbf{OnDuty:}}}
+\newline
+\rlap{\rl{دردسترس}}
+\hfill
+\llap{\lr{\textbf{Available:}}}
+\newline
+\rlap{\rl{اعزام شده}}
+\hfill
+\llap{\lr{\textbf{Dispatched:}}}
+\newline
+\rlap{\rl{در صحنه}}
+\hfill
+\llap{\lr{\textbf{OnScene:}}}
+\newline
+\rlap{\rl{در تعقیب و گریز}}
+\hfill
+\llap{\lr{\textbf{InPursuit:}}}
+\newline
+\rlap{\rl{اظطراری}}
+\hfill
+\llap{\lr{\textbf{Emergency:}}}
+\newline
+\rlap{\rl{در حال بازداشت}}
+\hfill
+\llap{\lr{\textbf{Arresting:}}}
+\newline
+\rlap{\rl{در حال انتقال}}
+\hfill
+\llap{\lr{\textbf{Transporting:}}}
+\newline
+\rlap{\rl{در حال گزارش}}
+\hfill
+\llap{\lr{\textbf{Report Writing:}}}
+\newline

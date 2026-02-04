@@ -2,14 +2,14 @@
 
 \usepackage{hyperref}
 \usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{eso-pic}
 \usepackage{wrapfig}
 \usepackage[inkscapeformat=png,inkscapepath=build]{svg}
 \usepackage{xepersian}
 \usepackage{enumerate}
 \usepackage[margin=1.5in,footskip=1in]{geometry}
 \usepackage[symbol]{footmisc}
-
-
 
 \include{config}
 
@@ -29,6 +29,14 @@
 \date{{\large \today}}
 
 \begin{document}
+
+\AddToShipoutPictureBG*{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[opacity=1] at (current page.center) {
+            \includegraphics[width=0.6\textwidth]{build/logo.png}
+        };
+    \end{tikzpicture}
+}
 
 \include{title}
 \pagebreak

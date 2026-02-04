@@ -1,4 +1,6 @@
 @startuml
+skinparam defaultFontName Noto Sans Arabic UI Md
+
 title Sequence: Arrest and Booking
 
 participant Officer as O
@@ -8,19 +10,19 @@ participant "Jail Officer" as JO
 participant "Booking System" as BS
 participant "Medical Staff" as MS
 
-O -> S : Make arrest
-O -> O : Read Miranda rights
-O -> TU : Request transport
-TU -> O : Arrive for pickup
-O -> TU : Transfer suspect
-TU -> JO : Deliver to jail
-JO -> S : Search suspect
-JO -> BS : Create booking record
-BS -> JO : Return booking number
-JO -> MS : Request medical screening
-MS -> S : Conduct screening
-MS -> JO : Return medical clearance
-JO -> S : Assign cell
-JO -> BS : Complete booking
-BS -> O : Notify arresting officer
+O -> S : انجام بازداشت ‍
+O -> O : قرائت حقوق مجرم ‍
+O -> TU : درخواست انتقال ‍
+TU -> O : رسیدن برای انتقال ‍
+O -> TU : انتقال مجرم ‍
+TU -> JO : انتقال به زندان ‍
+JO -> S : جست و جوی مجرم ‍
+JO -> BS : ثبت شناسه ‍
+BS -> JO : برگشت شماره شناسه ‍
+JO -> MS : درخواست سوابق پزشکی ‍
+MS -> S : انجام غربالگری ‍
+MS -> JO : برگشت تاییدیه سوابق پزشکی ‍
+JO -> S : تخصیص سلول ‍
+JO -> BS : پایان ثبت ‍
+BS -> O : اطلاع به افسر بازداشت کننده ‍
 @enduml

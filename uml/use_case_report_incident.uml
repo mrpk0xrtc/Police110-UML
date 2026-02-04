@@ -1,22 +1,27 @@
 @startuml
 title Use Case: Report Incident
 
-usecase "Report Incident" as UC
-actor "Civilian" as C
+actor "Citizen" as C
 actor "Dispatcher" as D
+actor "Officer" as O
 
-C --> UC : Initiates report
-D --> UC : Receives & logs
-note right of UC
-  ID: UC-001
-  Priority: High
-  Description: Citizen reports
-  a crime or incident
-  Precondition: System active
-  Postcondition: Incident logged
-end note
+usecase "Report Incident" as UC
 
-UC .> (Enter Details) : include
+C --> UC : reports incident
+D --> UC : processes report
+O --> UC : responds to incident
+
 UC .> (Verify Location) : include
-UC .> (Assign Priority) : extend
+UC .> (Determine Priority) : include
+UC .> (Create Record) : include
+
+UC <.. (Emergency Response) : extend <<if emergency>>
+UC <.. (Multi-Unit Dispatch) : extend <<if major incident>>
+UC <.. (Medical Assistance) : extend <<if injuries>>
+
+note right of UC
+  Citizen reports crime or emergency
+  Dispatcher processes and dispatches
+  Officer responds to the incident
+end note
 @enduml

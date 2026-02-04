@@ -1,4 +1,6 @@
 @startuml
+skinparam defaultFontName Noto Sans Arabic UI Md
+
 title Sequence: Evidence Submission
 
 participant Officer as O
@@ -7,18 +9,18 @@ participant "Evidence System" as ES
 participant "Lab Technician" as LT
 participant Detective as D
 
-O -> EC : Submit evidence item
-EC -> O : Verify submission form
-O -> EC : Sign custody log
-EC -> ES : Create evidence record
-ES -> EC : Return evidence ID
-EC -> ES : Log initial custody
-EC -> ES : Assign storage location
-EC -> D : Notify evidence available
-D -> ES : Request analysis
-ES -> LT : Assign analysis task
-LT -> ES : Update analysis status
-LT -> ES : Upload results
-ES -> D : Notify results ready
-D -> ES : Review analysis
+O -> EC : ثبت شئ مدرک ‍
+EC -> O : تایید فرم ثبت ‍
+O -> EC : امضای برگه ی تاییدیه ‍
+EC -> ES : ثبت مدارک ‍
+ES -> EC : برگشت شناسه مدارک ‍
+EC -> ES : ثبت اطلاعات اولیه ‍
+EC -> ES : تخصیص سلول در مخزن ‍
+EC -> D : اعلام وجود مدارک جدید ‍
+D -> ES : درخواست بررسی ‍
+ES -> LT : تخصیص وظایف ‍
+LT -> ES : بروزرسانی وضعیت بررسی ‍
+LT -> ES : بارگذاری نتایج ‍
+ES -> D : اعلان آمادگی نتایج ‍
+D -> ES : مرور تحلیل ها ‍
 @enduml

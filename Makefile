@@ -11,7 +11,7 @@ partial: *.tex
 
 gen_diagrams:
 	rm -rf images/
-	plantuml --format svg --output-dir images/ uml/*.uml
+	plantuml --charset UTF-8 --format svg --output-dir images/ uml/*.uml
 	mv uml/images .
 
 clean:

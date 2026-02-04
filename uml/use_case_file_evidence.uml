@@ -1,19 +1,31 @@
 @startuml
 title Use Case: File Evidence
 
-usecase "File Evidence" as UC
 actor "Officer" as O
 actor "Evidence Clerk" as EC
+actor "Detective" as DE
+actor "Lab Technician" as LT
 
-O --> UC : Submits evidence
-EC --> UC : Logs & stores
-note right of UC
-  ID: UC-005
-  Critical: Chain of custody
-  Legal requirement
-end note
+usecase "File Evidence" as UC
+
+O --> UC : collects & submits
+EC --> UC : processes & stores
+DE --> UC : requests for case
+LT --> UC : analyzes evidence
 
 UC .> (Tag Evidence) : include
 UC .> (Document Chain) : include
 UC .> (Store Securely) : include
+UC .> (Update Records) : include
+
+UC <.. (Send to Lab) : extend <<if analysis needed>>
+UC <.. (Present in Court) : extend <<if trial evidence>>
+UC <.. (Destroy Evidence) : extend <<if court ordered>>
+
+note right of UC
+  Maintains chain of custody
+  Ensures evidence integrity
+  Critical for court admissibility
+  Legal requirements strict
+end note
 @enduml

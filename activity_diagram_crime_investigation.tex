@@ -1,14 +1,47 @@
 \subsection{\lr{Activity Diagram - Crime Investigation}}
 
 \hspace{1cm}
-text
-\vspace{1cm}
+فرآیند تحقیق و بررسی جرم
+\newline
 
-\begin{center}
-  \begin{tikzpicture}[remember picture]
-  \node[anchor=north west]
-      at (current page.north west) {
-      \includesvg[width=14in, height=6in]{images/activity_diagram_crime_investigation}
-  };
-  \end{tikzpicture}
-\end{center}
+\begin{wrapfigure}{l}{2in}
+  \begin{center}
+    \begin{tikzpicture}[remember picture]
+    \node[anchor=north west]
+        at (current page.north west) {
+        \includesvg[width=8in, height=4in]{images/activity_diagram_crime_investigation}
+    };
+    \end{tikzpicture}
+  \end{center}
+\end{wrapfigure}
+
+\hspace{1cm}
+
+\begin{enumerate}
+    \item شروع
+    \item اختصاص پرونده
+    \item ارزیابی اولیه صحنه جرم
+    \begin{itemize}
+      \item جمع آوری مدارک و سرنخ ها
+      \item مصاحبه با شاهدان
+      \item مرور اطلاعات
+    \end{itemize}
+    \item تحلیل داده ها
+    \item شناسایی متهمان
+    \item مدارک کافی است؟
+    \begin{itemize}
+      \item \textbf{بله:}
+      \begin{enumerate}
+        \item دریافت حکم بازداشت
+        \item انجام بازداشت
+      \end{enumerate}
+      \item \textbf{خیر:}
+      \begin{enumerate}
+        \item ادامه تحقیقات
+        \item جمع آوری مدارک بیشتر
+      \end{enumerate}
+    \end{itemize}
+    \item آماده سازی پرونده
+    \item تحویل به دادستان
+    \item پایان
+\end{enumerate}

@@ -1,15 +1,41 @@
 \section{\lr{Activity Diagrams}}
+
+\hspace{1cm}
+در این سرفصل به بررسی نحوه انقال پروسه ها از مرحله ای به مرحله دیگر می پردازیم.
+\newline
+
 \subsection{\lr{Activity Diagram - Report to Dispatch Flow}}
 
 \hspace{1cm}
-text
-\vspace{1cm}
+نحوه ی انتقال از مرحله ی دریافت گزارش به مرحله ی اعزام نیرو ها
+\newline
 
-\begin{center}
-  \begin{tikzpicture}[remember picture]
-  \node[anchor=north west]
-      at (current page.north west) {
-      \includesvg[width=14in, height=6in]{images/activity_diagram_report_to_dispatch_flow}
-  };
-  \end{tikzpicture}
-\end{center}
+\begin{wrapfigure}{l}{2in}
+  \begin{center}
+    \begin{tikzpicture}[remember picture]
+    \node[anchor=north west]
+        at (current page.north west) {
+        \includesvg[width=14in, height=6in]{images/activity_diagram_report_to_dispatch_flow}
+    };
+    \end{tikzpicture}
+  \end{center}
+\end{wrapfigure}
+
+\hspace{1cm}
+
+\begin{enumerate}
+    \item شروع
+    \item دریافت گزارش/تماس
+    \item اضطراری؟
+    \begin{itemize}
+      \item \textbf{بله:} اعزام با اولویت
+      \item \textbf{خیر:} طبق روال عادی
+    \end{itemize}
+    \item ثبت وقایع
+    \item تایید موقعیت مکانی
+    \item شناسایی واحد های آماده
+    \item تخصیص افسران
+    \item تفهیم عملیات
+    \item پایش و رصد
+    \item پایان
+\end{enumerate}

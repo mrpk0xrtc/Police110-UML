@@ -9,7 +9,7 @@ if (Resistance?) then (Yes)
 else (No)
   :Proceed with Arrest;
 endif
-:Read Miranda Rights;
+:Read Rights;
 :Handcuff Suspect;
 :Search Incident to Arrest;
 :Transport to Station;

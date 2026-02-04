@@ -1,4 +1,6 @@
 @startuml
+skinparam defaultFontName Noto Sans Arabic UI Md
+
 title Sequence: Dispatch to Patrol
 
 participant Dispatcher as D
@@ -7,17 +9,17 @@ participant "MDT System" as MDT
 participant Officer as O
 participant "GPS Tracker" as GPS
 
-D -> CAD : Search available units
-CAD -> D : Return unit list
-D -> CAD : Select unit O
-CAD -> MDT : Send dispatch details
-MDT -> O : Display assignment
-O -> MDT : Accept assignment
-MDT -> CAD : Update unit status
-CAD -> D : Confirm dispatch
-D -> O : Voice confirmation
-O -> GPS : Activate tracking
-GPS -> CAD : Update location
-O -> D : En route notification
-O -> D : Arrival notification
+D -> CAD : جست و جوی واحد ها آماده ‍
+CAD -> D : برگشت لیست واحدها ‍
+D -> CAD : انتخاب واحد مناسب ‍
+CAD -> MDT : ارسال جزئیات اعزام ‍
+MDT -> O : نمایش ماموریت ‍
+O -> MDT : قبول ماموریت ‍
+MDT -> CAD : بروزرسانی وضعیت واحد ‍
+CAD -> D : تایید اعزام ‍
+D -> O : تاییدیه صوتی ‍
+O -> GPS : فعالسازی رهگیری ‍
+GPS -> CAD : بروزرسانی موقعیت مکانی ‍
+O -> D : اعلان در مسیر ‍
+O -> D : اعلان رسیدن ‍
 @enduml

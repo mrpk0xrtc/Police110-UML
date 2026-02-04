@@ -1,4 +1,6 @@
 @startuml
+skinparam defaultFontName Noto Sans Arabic UI Md
+
 title Sequence: Training Management
 
 actor "Training Officer" as TO
@@ -6,24 +8,24 @@ participant "Training System" as TS
 participant "Officer" as O
 participant "HR Database" as HR
 
-TO -> TS : Schedule training session
-TS -> TO : Confirm schedule
-TO -> TS : Enroll officers
-TS -> O : Send training notification
-O -> TS : Confirm attendance
-TS -> HR : Update training records
+TO -> TS : برنامه ریزی جلسه ی آموزش ‍
+TS -> TO : تایید برنامه ‍
+TO -> TS : ثبت نام افسران ‍
+TS -> O : ارسال اعلامیه آموزش ‍
+O -> TS : تایید حضور ‍
+TS -> HR : بروزرسانی داده ها ‍
 
-alt On training day
-  TO -> O : Conduct training
-  O -> TO : Participate/complete
-  TO -> TS : Record completion
-  TS -> HR : Update certifications
-  HR -> O : Send confirmation
-else Reschedule needed
-  TO -> TS : Cancel/reschedule
-  TS -> O : Send cancellation
-  TS -> TO : New schedule options
+alt در روز تمرین ‍
+  TO -> O : انجام آموزش ‍
+  O -> TO : شرکت/اتمام ‍
+  TO -> TS : تکمیل اطلاعات ‍
+  TS -> HR : بروزرسانی گواهی
+  HR -> O : ارسال تاییدیه ‍
+else نیاز به برنامه ریزی مجدد ‍
+  TO -> TS : لغو/برنامه ریزی مجدد ‍
+  TS -> O : اعلام لغو برنامه ‍
+  TS -> TO : اعلام گزینه های جدید ‍
 end
 
-TS -> TO : Generate training report
+TS -> TO : تولید گزارش آموزش ‍
 @enduml

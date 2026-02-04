@@ -1,14 +1,40 @@
 \subsection{\lr{Activity Diagram - Evidence Chain of Custody}}
 
 \hspace{1cm}
-text
-\vspace{1cm}
+فرآیند تحلیل, تایید و مرتبط سازی مدارک
+\newline
 
-\begin{center}
-  \begin{tikzpicture}[remember picture]
-  \node[anchor=north west]
-      at (current page.north west) {
-      \includesvg[width=14in, height=6in]{images/activity_diagram_evidence_chain_of_custody}
-  };
-  \end{tikzpicture}
-\end{center}
+\begin{wrapfigure}{l}{2in}
+  \begin{center}
+    \begin{tikzpicture}[remember picture]
+    \node[anchor=north west]
+        at (current page.north west) {
+        \includesvg[width=14in, height=6in]{images/activity_diagram_evidence_chain_of_custody}
+    };
+    \end{tikzpicture}
+  \end{center}
+\end{wrapfigure}
+
+\hspace{1cm}
+
+\begin{enumerate}
+    \item شروع
+    \item کشف/جمع آوری مدارک
+    \item برچسپ گذاری
+    \item درج مکان/زمان
+    \item قرار دادن در بسته بندی
+    \item امضای برگه ها
+    \item انتقال به اتاق مدارک
+    \item دریافت توسط متصدی
+    \item ثبت در سیستم مدارک
+    \item نگهداری در مکان امن
+    \item خروج از مخزن برای بررسی
+    \item بازگشت پس از بررسی
+    \item اتمام بررسی؟
+    \begin{itemize}
+      \item \textbf{بله:} ادامه
+      \item \textbf{خیر:} برو به 11
+    \end{itemize}
+    \item نابودی مدارک
+    \item پایان
+\end{enumerate}

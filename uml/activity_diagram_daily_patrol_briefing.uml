@@ -25,7 +25,6 @@ partition "Patrol" {
 partition "End Shift" {
   :Complete Reports;
   :Return Equipment;
-  :Brief Relief Officer;
   :Clock Out;
 }
 @enduml

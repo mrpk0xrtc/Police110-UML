@@ -1,4 +1,6 @@
 @startuml
+skinparam defaultFontName Noto Sans Arabic UI Md
+
 title Communication: Multi-Agency Response
 
 actor "Police Dispatch" as PD
@@ -9,20 +11,20 @@ participant "EMS Dispatch" as ED
 participant "EMS Units" as EU
 participant "Command Post" as CP
 
-PD -> FD : Notify fire needed
-PD -> ED : Request EMS
-FD -> FU : Dispatch fire units
-ED -> EU : Dispatch ambulances
-PU -> CP : Establish command
-FU -> CP : Report on scene
-EU -> CP : Report medical status
-CP -> PU : Assign perimeter
-CP -> FU : Assign fire attack
-CP -> EU : Assign triage area
-PU -> PD : Situation updates
-FU -> FD : Progress reports
-EU -> ED : Patient status
-PD -> FD : Request additional
-PD -> ED : Request more units
-CP -> All : Unified command meeting
+PD -> FD : درخواست از آتش نشانی ‍
+PD -> ED : درخواست اورژانس ‍
+FD -> FU : اعزام نیروی های آتش نشانی ‍
+ED -> EU : اعزام آمبولانس ها ‍
+PU -> CP : برپایی فرماندهی ‍
+FU -> CP : گزارش از صحنه ‍
+EU -> CP : گزارش وضعیت پزشکی ‍
+CP -> PU : حصارکشی ناحیه ‍
+CP -> FU : تعیین محدوده آتش ‍
+CP -> EU : تعیین محدوده بیمارستانی ‍
+PU -> PD : بروزرسانی ها از وضعیت ‍
+FU -> FD : گزارش وضعیت ‍
+EU -> ED : وضعیت مجروحان ‍
+PD -> FD : درخواست نیروی بیشتر ‍
+PD -> ED : درخواست نیروی بیشتر ‍
+CP -> All : جلسه ی یکپارچه بین سازمانی ‍
 @enduml

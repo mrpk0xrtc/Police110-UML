@@ -1,4 +1,6 @@
 @startuml
+skinparam defaultFontName Noto Sans Arabic UI Md
+
 title Sequence: Emergency Response Coordination
 
 actor "Dispatcher" as D
@@ -7,23 +9,23 @@ participant "Fire Department" as FD
 participant "EMS" as EMS
 participant "Incident Command" as IC
 
-D -> PU : Dispatch to emergency
-D -> FD : Notify fire needed
-D -> EMS : Request ambulance
-PU -> D : Arrive on scene
-PU -> D : Situation assessment
-D -> IC : Establish command
+D -> PU : اعزام به حادثه ‍
+D -> FD : اعلام نیاز به آتش نشانی ‍
+D -> EMS : درخواست آمبولانس ‍
+PU -> D : رسیدن به صحنه ‍
+PU -> D : ارزیابی وضعیت ‍
+D -> IC : برپایی فرماندهی ‍
 
-par Coordination
-  PU -> IC : Perimeter security
-  FD -> IC : Fire suppression
-  EMS -> IC : Medical triage
-  IC -> All : Unified updates
+par شروط ‍
+  PU -> IC : امنیت ناحیه ‍
+  FD -> IC : اطفای حریق ‍
+  EMS -> IC : رده بندی پزشکی ‍
+  IC -> All : بروزرسانی یکپارچه ‍
 end
 
-IC -> D : Request additional resources
-D -> PU : Send backup units
-IC -> All : Incident resolved
-All -> IC : Clear from scene
-IC -> D : Close incident
+IC -> D : درخواست منابع بیشتر ‍
+D -> PU : ارسال نیروی کمکی ‍
+IC -> All : اعلام حل حادثه ‍
+All -> IC : ترک مکان حادثه ‍
+IC -> D : اعلام خاتمه حادثه ‍
 @enduml

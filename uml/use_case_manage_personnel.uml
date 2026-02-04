@@ -1,20 +1,29 @@
 @startuml
 title Use Case: Manage Personnel
 
-usecase "Manage Personnel" as UC
 actor "HR Manager" as HR
 actor "Police Chief" as PC
+actor "Training Officer" as TO
 
-HR --> UC : Maintains records
-PC --> UC : Views personnel data
-note right of UC
-  ID: UC-007
-  Description: Handle officer
-  records, assignments, evaluations
-end note
+usecase "Manage Personnel" as UC
 
-UC .> (Add New Officer) : include
+HR --> UC : maintains records
+PC --> UC : views/approves changes
+TO --> UC : updates training
+
 UC .> (Update Records) : include
 UC .> (Assign Duties) : include
-UC .> (Process Retirement) : include
+UC .> (Track Training) : include
+UC .> (Process Changes) : include
+
+UC <.. (Background Check) : extend <<new hires>>
+UC <.. (Promotion Review) : extend <<promotions>>
+UC <.. (Disciplinary Action) : extend <<performance issues>>
+
+note right of UC
+  Manages officer careers
+  Tracks qualifications
+  Ensures legal compliance
+  Impacts daily operations
+end note
 @enduml

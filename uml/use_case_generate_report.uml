@@ -3,52 +3,26 @@ title Use Case: Generate Report
 
 actor "Officer" as O
 actor "Supervisor" as S
-actor "Records Clerk" as RC
-actor "Prosecutor" as P
+actor "Records System" as RS
 
 usecase "Generate Report" as UC
 
-O --> UC : creates/edits report
-S --> UC : reviews/approves report
-RC --> UC : files/distributes report
-P --> UC : receives/uses report
+O --> UC : creates report
+S --> UC : reviews/approves
+RS --> UC : stores/filing
 
-UC .> (Select Report Template) : include
-UC .> (Enter Incident Details) : include
-UC .> (Add Involved Persons) : include
-UC .> (Attach Evidence References) : include
-UC .> (Sign Electronically) : include
+UC .> (Enter Details) : include
+UC .> (Add Evidence) : include
+UC .> (Submit for Review) : include
 
-UC <.. (Generate Statistical Analysis) : extend <<if aggregate data needed>>
-UC <.. (Produce Public Version) : extend <<if public release required>>
-UC <.. (Create Court Package) : extend <<if for legal proceedings>>
-UC <.. (Export to External System) : extend <<if inter-agency sharing>>
+UC <.. (Statistical Report) : extend <<if aggregate data>>
+UC <.. (Public Version) : extend <<if public release>>
+UC <.. (Court Package) : extend <<if legal proceedings>>
 
 note right of UC
-  ID: UC-006
-  Priority: Medium
-  Frequency: Multiple daily per officer
-  Preconditions: Incident occurred, officer involved
-  Postconditions: Report created, approved, filed
-  Main Success: Accurate, complete, timely documentation
+  Creates official documentation
+  Multiple report types
+  Supervisor approval required
+  Legal and statistical uses
 end note
-
-rectangle "Report Types" {
-  (Incident Report) as RT1
-  (Arrest Report) as RT2
-  (Traffic Accident) as RT3
-  (Use of Force) as RT4
-  (Evidence Report) as RT5
-
-  RT1 -[hidden] RT2
-  RT2 -[hidden] RT3
-  RT3 -[hidden] RT4
-  RT4 -[hidden] RT5
-}
-
-UC --> RT1 : includes
-UC --> RT2 : includes
-UC --> RT3 : includes
-UC --> RT4 : includes
-UC --> RT5 : includes
 @enduml
